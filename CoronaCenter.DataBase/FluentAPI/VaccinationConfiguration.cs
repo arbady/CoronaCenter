@@ -24,7 +24,7 @@ namespace CoronaCenter.DataBase.FluentAPI
             builder.Property(v => v.LotId)
                    .IsRequired();
 
-            builder.Property(v => v.CalandarId)
+            builder.Property(v => v.AppointmentId)
                    .IsRequired();
 
             //Relation

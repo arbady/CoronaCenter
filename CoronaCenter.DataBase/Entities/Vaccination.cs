@@ -12,9 +12,9 @@ namespace CoronaCenter.DataBase.Entities
         public int Id { get; set; }
         public int MedicalStaffId { get; set; }
         public int LotId { get; set; }
-        public int CalandarId { get; set; }
+        public int AppointmentId { get; set; }
         public virtual Medical_Staff MedicalStaff { get; set; }
         public virtual Lot Lot { get; set; }
-        public virtual Calendar Calendar { get; set; }
+        public virtual Appointment Appointment { get; set; }
     }
 }

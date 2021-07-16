@@ -18,6 +18,9 @@ namespace CoronaCenter.DataBase.FluentAPI
             builder.Property(s => s.Id)
                    .ValueGeneratedOnAdd();
 
+            builder.Property(s => s.Day)
+                   .IsRequired();
+
             builder.Property(s => s.OpenHours)
                    .IsRequired();
 

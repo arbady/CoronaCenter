@@ -32,7 +32,8 @@ namespace CoronaCenter.DataBase.FluentAPI
 
             builder.HasOne(c => c.Responsible)
                    .WithOne()
-                   .HasForeignKey<Center>("ResponsibleId");
+                   .HasForeignKey<Center>("ResponsibleId")
+                   .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(w => w.Address)
                    .WithOne()
@@ -41,8 +42,8 @@ namespace CoronaCenter.DataBase.FluentAPI
             builder.HasMany(c => c.Lots)
                    .WithOne(l => l.Center);
             
-            builder.HasMany(c => c.Calendars)
-                   .WithOne(cal => cal.Center);
+            //builder.HasMany(c => c.Appointments)
+            //       .WithOne(cal => cal.Center);
             
             builder.HasMany(c => c.Schedules)
                    .WithOne(sc => sc.Center);

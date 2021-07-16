@@ -4,13 +4,14 @@ using CoronaCenter.DataBase.Entities;
 using CoronaCenter.DataBase.FluentAPI;
 using Microsoft.EntityFrameworkCore;
 using System;
+using Tools;
 
 namespace CoronaCenter.DataBase
 {
     public class DataContext : DbContext
     {
         public DbSet<Address> Addresses { get; set; }
-        public DbSet<Calendar> Calendars { get; set; }
+        public DbSet<Appointment> Calendars { get; set; }
         public DbSet<Center> Centers { get; set; }
         public DbSet<Lot> Lots { get; set; }
         public DbSet<Lot_Out> Lot_Outs { get; set; }
@@ -24,9 +25,19 @@ namespace CoronaCenter.DataBase
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<UserProfile> Users { get; set; }
 
+        public DataContext()
+        {
+        }
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-
+            Console.WriteLine(options);
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            if (!options.IsConfigured)
+            {
+                options.UseSqlServer("Server=LAPTOP-VIA3UD35; database=CoronaCenterDB; Trusted_Connection=true");
+            }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,9 +45,8 @@ namespace CoronaCenter.DataBase
 
             //Configuration
             modelBuilder.ApplyConfiguration(new AddressConfiguration());
-            modelBuilder.ApplyConfiguration(new CalendarConfiguration());
+            modelBuilder.ApplyConfiguration(new AppointmentConfiguration());
             modelBuilder.ApplyConfiguration(new CenterConfiguation());
-            modelBuilder.ApplyConfiguration(new LotConfiguration());
             //modelBuilder.ApplyConfiguration(new Lot_OutConfiguration());
             modelBuilder.ApplyConfiguration(new MakerConfiguration());
             modelBuilder.ApplyConfiguration(new Medical_StaffConfiguration());
@@ -46,10 +56,23 @@ namespace CoronaCenter.DataBase
             modelBuilder.ApplyConfiguration(new VaccinationConfiguration());
             modelBuilder.ApplyConfiguration(new VaccineConfiguration());
             modelBuilder.ApplyConfiguration(new WarehouseConfiguration());
+            modelBuilder.ApplyConfiguration(new LotConfiguration());
             modelBuilder.ApplyConfiguration(new UserProfileConfiguration());
 
             //DataSet
             //modelBuilder.ApplyConfiguration(new DataSetUser());
+
+            //UserProfile user_1 = new ()
+            //{
+            //    Id = 1,
+            //    FirstName = "Samuel",
+            //    LastName = "Legrain",
+            //    Email = "samuel.legrain@bstorm.be",
+            //    Salt = Guid.NewGuid().ToString()
+            //};
+            //user_1.Password = PasswordHasher.Hashing<UserProfile>(user_1, "test1234=", u => u.Salt);
+            //modelBuilder.Entity<UserProfile>().HasData(user_1);
+           
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using CoronaCenter.Models.Enums;
+﻿using CoronaCenter.DataBase.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

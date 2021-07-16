@@ -19,6 +19,6 @@ namespace CoronaCenter.DataBase.Entities
         public int AddressId { get; set; }
         public virtual Address Address { get; set; }
         public virtual UserProfile User { get; set; }
-        public virtual IEnumerable<Calendar> Calendars { get; set; }
+        public virtual IEnumerable<Appointment> Appointments { get; set; }
     }
 }

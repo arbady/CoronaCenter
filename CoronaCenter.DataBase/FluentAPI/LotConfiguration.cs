@@ -41,10 +41,13 @@ namespace CoronaCenter.DataBase.FluentAPI
                    .WithMany(v => v.Lots);
             
             builder.HasOne(l => l.Warehouse)
-                   .WithMany(w => w.Lots);
+                   .WithMany(w => w.Lots)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasForeignKey(l => l.WarehouseId);
 
             builder.HasMany(l => l.Vaccinations)
-                   .WithOne(v => v.Lot);
+                   .WithOne(v => v.Lot)
+                   .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

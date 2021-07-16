@@ -37,7 +37,8 @@ namespace CoronaCenter.DataBase.FluentAPI
             //Relation
 
             builder.HasOne(v => v.Maker)
-                   .WithMany();
+                   .WithMany()
+                   .HasForeignKey("MakerId");
         }
     }
 }

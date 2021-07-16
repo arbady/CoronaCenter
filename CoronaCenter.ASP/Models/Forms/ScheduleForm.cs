@@ -1,4 +1,5 @@
-﻿using CoronaCenter.Models;
+﻿using CoronaCenter.DataBase;
+using CoronaCenter.DataBase.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,12 +12,15 @@ namespace CoronaCenter.ASP.Models.Forms
     public class ScheduleForm
     {
         public int Id { get; set; }
-        public Time OpenHours { get; set; }
-        public Time CloseHours { get; set; }
 
-        [Required]
-        [Range(1,7)]
-        public int DayNumber { get; set;}
+        [EnumDataType(typeof(Day))]
+        public Day Day { get; set; }
+
+        [DataType(DataType.Time)]
+        public DateTime OpenHours { get; set; }
+
+        [DataType(DataType.Time)]
+        public DateTime CloseHours { get; set; }
 
         [Required]
         public int CenterId { get; set; }

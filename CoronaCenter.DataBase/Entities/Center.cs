@@ -18,7 +18,7 @@ namespace CoronaCenter.DataBase.Entities
         public virtual IEnumerable<Staff> Staffs { get; set; }
         public virtual IEnumerable<Vaccine> Vaccines { get; set; }
         public virtual IEnumerable<Lot> Lots { get; set; }
-        public virtual IEnumerable<Calendar> Calendars { get; set; }
+        public virtual IEnumerable<Appointment> Appointments { get; set; }
         public virtual IEnumerable<Schedule> Schedules { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿using CoronaCenter.Models.Entities;
+﻿using CoronaCenter.DataBase.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

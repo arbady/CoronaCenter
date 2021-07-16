@@ -32,7 +32,8 @@ namespace CoronaCenter.DataBase.FluentAPI
             //Relation
 
             builder.HasMany(m => m.Vaccinations)
-                   .WithOne(v => v.MedicalStaff);
+                   .WithOne(v => v.MedicalStaff)
+                   .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(m => m.Staff)
                    .WithMany(s => s.Medical_Staffs);

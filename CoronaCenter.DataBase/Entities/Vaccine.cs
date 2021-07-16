@@ -16,7 +16,7 @@ namespace CoronaCenter.DataBase.Entities
         public int MakerId { get; set; }
         public virtual Maker Maker { get; set; }
         public virtual IEnumerable<Center> Centers { get; set; }
-        public virtual IEnumerable<Calendar> Calendars { get; set; }
+        public virtual IEnumerable<Appointment> Appointments { get; set; }
         public virtual IEnumerable<Lot> Lots { get; set; }
     }
 }

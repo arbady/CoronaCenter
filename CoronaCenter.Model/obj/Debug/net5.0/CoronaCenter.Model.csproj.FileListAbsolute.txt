@@ -1,0 +1,17 @@
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\obj\Debug\net5.0\CoronaCenter.Model.csprojAssemblyReference.cache
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\obj\Debug\net5.0\CoronaCenter.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\obj\Debug\net5.0\CoronaCenter.Model.AssemblyInfoInputs.cache
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\obj\Debug\net5.0\CoronaCenter.Model.AssemblyInfo.cs
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\obj\Debug\net5.0\CoronaCenter.Model.csproj.CoreCompileInputs.cache
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\bin\Debug\net5.0\CoronaCenter.Model.deps.json
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\bin\Debug\net5.0\CoronaCenter.Model.dll
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\bin\Debug\net5.0\ref\CoronaCenter.Model.dll
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\bin\Debug\net5.0\CoronaCenter.Model.pdb
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\bin\Debug\net5.0\CoronaCenter.DataBase.dll
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\bin\Debug\net5.0\Tools.dll
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\bin\Debug\net5.0\CoronaCenter.DataBase.pdb
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\bin\Debug\net5.0\Tools.pdb
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\obj\Debug\net5.0\CoronaCenter.Model.csproj.CopyComplete
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\obj\Debug\net5.0\CoronaCenter.Model.dll
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\obj\Debug\net5.0\ref\CoronaCenter.Model.dll
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.Model\obj\Debug\net5.0\CoronaCenter.Model.pdb
