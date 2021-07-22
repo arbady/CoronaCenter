@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace CoronaCenter.DataBase.Entities
+namespace CoronaCenter.Model
 {
-    public class UserPublic
+    public class UserPublic : IDataModel<int>
     {
         public int Id { get; set; }
 

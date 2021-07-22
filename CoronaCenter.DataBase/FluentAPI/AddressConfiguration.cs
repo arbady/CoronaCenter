@@ -1,13 +1,8 @@
-﻿using CoronaCenter.DataBase.Entities;
+﻿using CoronaCenter.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CoronaCenter.DataBase.FluentAPI
+namespace CoronaCenter.Model.FluentAPI
 {
     public class AddressConfiguration : IEntityTypeConfiguration<Address>
     {

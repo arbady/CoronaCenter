@@ -1,10 +1,9 @@
-﻿using CoronaCenter.DataBase;
-using CoronaCenter.DataBase.DataSet;
-using CoronaCenter.DataBase.Entities;
-using CoronaCenter.DataBase.FluentAPI;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
-using Tools;
+using CoronaCenter.Model.Entities;
+using CoronaCenter.Model.FluentAPI;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using CoronaCenter.DataBase.DataSet;
 
 namespace CoronaCenter.DataBase
 {
@@ -14,9 +13,9 @@ namespace CoronaCenter.DataBase
         public DbSet<Appointment> Calendars { get; set; }
         public DbSet<Center> Centers { get; set; }
         public DbSet<Lot> Lots { get; set; }
-        public DbSet<Lot_Out> Lot_Outs { get; set; }
+        public DbSet<LotOut> Lot_Outs { get; set; }
         public DbSet<Maker> Makers { get; set; }
-        public DbSet<Medical_Staff> Medical_Staffs { get; set; }
+        public DbSet<MedicalStaff> Medical_Staffs { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<Staff> Staffs { get; set; }
@@ -49,7 +48,7 @@ namespace CoronaCenter.DataBase
             modelBuilder.ApplyConfiguration(new CenterConfiguation());
             //modelBuilder.ApplyConfiguration(new Lot_OutConfiguration());
             modelBuilder.ApplyConfiguration(new MakerConfiguration());
-            modelBuilder.ApplyConfiguration(new Medical_StaffConfiguration());
+            modelBuilder.ApplyConfiguration(new MedicalStaffConfiguration());
             modelBuilder.ApplyConfiguration(new PatientConfiguration());
             modelBuilder.ApplyConfiguration(new ScheduleConfiguration());
             modelBuilder.ApplyConfiguration(new StaffConfiguration());
@@ -60,6 +59,10 @@ namespace CoronaCenter.DataBase
             modelBuilder.ApplyConfiguration(new UserProfileConfiguration());
 
             //DataSet
+            modelBuilder.ApplyConfiguration(new DataSetStaff());
+            //modelBuilder.ApplyConfiguration(new DataSetAddress());
+            modelBuilder.ApplyConfiguration(new DataSetWarehouse());
+
             //modelBuilder.ApplyConfiguration(new DataSetUser());
 
             //UserProfile user_1 = new ()
@@ -72,7 +75,7 @@ namespace CoronaCenter.DataBase
             //};
             //user_1.Password = PasswordHasher.Hashing<UserProfile>(user_1, "test1234=", u => u.Salt);
             //modelBuilder.Entity<UserProfile>().HasData(user_1);
-           
+
         }
     }
 }

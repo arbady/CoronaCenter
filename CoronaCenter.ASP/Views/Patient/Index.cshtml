@@ -1,0 +1,79 @@
+﻿@model IEnumerable<CoronaCenter.Model.Entities.Patient>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NISS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicalIndication)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.NISS
+            </td>
+            <td>
+                @item.DateOfBirth
+            </td>
+            <td>
+                @item.PhoneNumber
+            </td>
+            <td>
+                @item.MedicalIndication
+            </td>
+            <td>
+                @item.UserId
+            </td>
+            <td>
+                @item.AddressId
+            </td>
+            <td>
+                <a asp-controller="Patient"
+                   asp-action="Update"
+                   asp-route-id="@item.Id">
+                    Modifier
+                </a>|
+                <a asp-controller="Patient"
+                   asp-action="Delete"
+                   asp-route-id="@item.Id"
+                   class="delete-link">
+                    Supprimer
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,8 +1,8 @@
-﻿using CoronaCenter.DataBase.Entities;
+﻿using CoronaCenter.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CoronaCenter.DataBase.FluentAPI
+namespace CoronaCenter.Model.FluentAPI
 {
     public class MakerConfiguration : IEntityTypeConfiguration<Maker>
     {
