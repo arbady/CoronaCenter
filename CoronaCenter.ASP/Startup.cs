@@ -41,13 +41,13 @@ namespace CoronaCenter.ASP
             services.AddScoped<SmtpClient>();
 
 
-            services.AddScoped<IService<AddressModel, AddressForm>, AddressService>();
-            services.AddScoped<IService<PatientModel, PatientForm>, PatientService>();
-            services.AddScoped<IService<MakerModel, MakerForm>, MakerService>();
-            services.AddScoped<IService<StaffModel, StaffForm>, StaffService>();
-            services.AddScoped<IService<MedicalStaffModel, MedicalStaffForm>, MedicalStaffService>();
-            services.AddScoped<IService<UserModel, UserForm>, UserService>();
-            services.AddScoped<IService<CenterModel, CenterForm>, CenterService>();
+            services.AddScoped<IBase<AddressModel, AddressForm>, AddressService>();
+            services.AddScoped<IBase<PatientModel, PatientForm>, PatientService>();
+            services.AddScoped<IBase<MakerModel, MakerForm>, MakerService>();
+            services.AddScoped<IBase<StaffModel, StaffForm>, StaffService>();
+            services.AddScoped<IBase<MedicalStaffModel, MedicalStaffForm>, MedicalStaffService>();
+            services.AddScoped<IBase<UserModel, UserForm>, UserService>();
+            services.AddScoped<IBase<CenterModel, CenterForm>, CenterService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

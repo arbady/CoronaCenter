@@ -37,7 +37,7 @@ namespace CoronaCenter.Services.Mapper
             };
         }
 
-        public MakerForm MapModelToForm(Maker entity)
+        public MakerForm MapModelToForm(MakerModel entity)
         {
             return new MakerForm
             {

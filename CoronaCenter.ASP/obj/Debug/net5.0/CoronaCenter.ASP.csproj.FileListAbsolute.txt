@@ -142,6 +142,8 @@ C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\Coro
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.ASP\obj\Debug\net5.0\CoronaCenter.ASP.TagHelpers.input.cache
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.ASP\obj\Debug\net5.0\CoronaCenter.ASP.TagHelpers.output.cache
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.ASP\obj\Debug\net5.0\CoronaCenter.ASP.RazorCoreGenerate.cache
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.ASP\obj\Debug\net5.0\Razor\Views\Center\Create.cshtml.g.cs
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.ASP\obj\Debug\net5.0\Razor\Views\Center\Index.cshtml.g.cs
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.ASP\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.ASP\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.ASP\obj\Debug\net5.0\Razor\Views\Maker\Create.cshtml.g.cs

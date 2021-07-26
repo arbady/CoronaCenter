@@ -45,7 +45,7 @@ namespace CoronaCenter.Services.Mapper
             };
         }
 
-        public UserForm MapModelToForm(UserProfile model)
+        public UserForm MapModelToForm(UserModel model)
         {
             return new UserForm
             {

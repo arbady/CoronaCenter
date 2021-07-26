@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoronaCenter.DataBase.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210716154605_CreationDB")]
-    partial class CreationDB
+    [Migration("20210725145607_creationDB")]
+    partial class creationDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,7 +36,7 @@ namespace CoronaCenter.DataBase.Migrations
                     b.ToTable("CenterVaccine");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Address", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Address", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,9 +67,119 @@ namespace CoronaCenter.DataBase.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Address");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            City = "Rixensart",
+                            Number = "10",
+                            Province = 0,
+                            Street = "Rue de la paix",
+                            ZipCode = 1040
+                        },
+                        new
+                        {
+                            Id = 2,
+                            City = "Mons",
+                            Number = "8",
+                            Province = 1,
+                            Street = "Rue de l'Espinette",
+                            ZipCode = 7000
+                        },
+                        new
+                        {
+                            Id = 3,
+                            City = "Charleroi",
+                            Number = "5 Bis",
+                            Province = 1,
+                            Street = "Rue des Oiseaux",
+                            ZipCode = 6000
+                        },
+                        new
+                        {
+                            Id = 4,
+                            City = "Liège",
+                            Number = "1",
+                            Province = 2,
+                            Street = "Rue de la peur",
+                            ZipCode = 4000
+                        },
+                        new
+                        {
+                            Id = 5,
+                            City = "Namur",
+                            Number = "121",
+                            Province = 4,
+                            Street = "Rue du bonheur",
+                            ZipCode = 5000
+                        },
+                        new
+                        {
+                            Id = 6,
+                            City = "Frameries",
+                            Number = "2/3",
+                            Province = 1,
+                            Street = "Clos des Ormes",
+                            ZipCode = 7080
+                        },
+                        new
+                        {
+                            Id = 7,
+                            City = "Colfontaine",
+                            Number = "14A",
+                            Province = 1,
+                            Street = "Cité de l'Abbaye",
+                            ZipCode = 7340
+                        },
+                        new
+                        {
+                            Id = 8,
+                            City = "Saint-Ghislain",
+                            Number = "53",
+                            Province = 1,
+                            Street = "Cité des pétetites préelles",
+                            ZipCode = 7330
+                        },
+                        new
+                        {
+                            Id = 9,
+                            City = "Tournai",
+                            Number = "13",
+                            Province = 1,
+                            Street = "Cité des anges",
+                            ZipCode = 7500
+                        },
+                        new
+                        {
+                            Id = 10,
+                            City = "Huy",
+                            Number = "57",
+                            Province = 2,
+                            Street = "Rue Simone de Bondue",
+                            ZipCode = 4500
+                        },
+                        new
+                        {
+                            Id = 11,
+                            City = "Diant",
+                            Number = "83",
+                            Province = 4,
+                            Street = "Impasse des maraichers",
+                            ZipCode = 5500
+                        },
+                        new
+                        {
+                            Id = 12,
+                            City = "BoitsFort",
+                            Number = "106c",
+                            Province = 0,
+                            Street = "Rue Grande",
+                            ZipCode = 1170
+                        });
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Appointment", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Appointment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -106,7 +216,7 @@ namespace CoronaCenter.DataBase.Migrations
                     b.HasCheckConstraint("DateVacc", "[DateVacc] >= GetDate()");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Center", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Center", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -133,9 +243,39 @@ namespace CoronaCenter.DataBase.Migrations
                         .IsUnique();
 
                     b.ToTable("Center");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AddressId = 9,
+                            Name = "CV Numero1",
+                            ResponsibleId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AddressId = 10,
+                            Name = "CV Numero2",
+                            ResponsibleId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AddressId = 11,
+                            Name = "CV Numero3",
+                            ResponsibleId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AddressId = 12,
+                            Name = "CV Numero4",
+                            ResponsibleId = 4
+                        });
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Lot", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Lot", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -168,9 +308,47 @@ namespace CoronaCenter.DataBase.Migrations
                     b.HasIndex("WarehouseId");
 
                     b.ToTable("Lot");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CenterId = 1,
+                            DateIn = new DateTime(2021, 4, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Quantity = 3000,
+                            VaccineId = 1,
+                            WarehouseId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CenterId = 2,
+                            DateIn = new DateTime(2021, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Quantity = 1000,
+                            VaccineId = 2,
+                            WarehouseId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CenterId = 3,
+                            DateIn = new DateTime(2021, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Quantity = 1500,
+                            VaccineId = 3,
+                            WarehouseId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CenterId = 4,
+                            DateIn = new DateTime(2021, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Quantity = 4200,
+                            VaccineId = 4,
+                            WarehouseId = 4
+                        });
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Lot_Out", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.LotOut", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -190,10 +368,10 @@ namespace CoronaCenter.DataBase.Migrations
 
                     b.HasIndex("LotId");
 
-                    b.ToTable("Lot_Outs");
+                    b.ToTable("LotOut");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Maker", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Maker", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -208,9 +386,31 @@ namespace CoronaCenter.DataBase.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Maker");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "BioNTech"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Oxford"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Moderna"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Johnson & Johnson"
+                        });
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Medical_Staff", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.MedicalStaff", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -231,10 +431,10 @@ namespace CoronaCenter.DataBase.Migrations
 
                     b.HasIndex("StaffId");
 
-                    b.ToTable("Medical_Staff");
+                    b.ToTable("MedicalStaff");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Patient", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Patient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -277,9 +477,21 @@ namespace CoronaCenter.DataBase.Migrations
                         .IsUnique();
 
                     b.ToTable("Patient");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AddressId = 1,
+                            DateOfBirth = new DateTime(1986, 4, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            MedicalIndication = "Test",
+                            NISS = "86043058162",
+                            PhoneNumber = "0466423930",
+                            UserId = 5
+                        });
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Schedule", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Schedule", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -308,18 +520,21 @@ namespace CoronaCenter.DataBase.Migrations
                     b.ToTable("Schedule");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Staff", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Staff", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CenterId")
+                    b.Property<int?>("CenterId")
                         .HasColumnType("int");
 
                     b.Property<int>("Grade")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Risponsible")
+                        .HasColumnType("bit");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -332,9 +547,39 @@ namespace CoronaCenter.DataBase.Migrations
                         .IsUnique();
 
                     b.ToTable("Staff");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Grade = 0,
+                            Risponsible = true,
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Grade = 1,
+                            Risponsible = false,
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Grade = 2,
+                            Risponsible = false,
+                            UserId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Grade = 2,
+                            Risponsible = false,
+                            UserId = 4
+                        });
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.UserProfile", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.UserProfile", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -382,9 +627,56 @@ namespace CoronaCenter.DataBase.Migrations
                     b.ToTable("UserProfile");
 
                     b.HasCheckConstraint("CK_Email", "Email LIKE '__%@__%.%'");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "arnoldmpoyi@yahoo.fr",
+                            FirstName = "Arnold",
+                            LastName = "Mpoyi",
+                            Password = new byte[] { 246, 160, 244, 210, 177, 53, 4, 62, 230, 188, 163, 102, 74, 208, 17, 196, 157, 140, 150, 249, 245, 231, 138, 97, 55, 131, 70, 103, 90, 204, 52, 55 },
+                            Salt = "50a7117c-e1ff-4153-828b-20fff1211385"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "cocodeblock@gmail.com",
+                            FirstName = "Corentin",
+                            LastName = "De Block",
+                            Password = new byte[] { 135, 196, 248, 53, 211, 66, 104, 44, 53, 147, 225, 85, 231, 115, 51, 248, 82, 87, 105, 191, 37, 21, 132, 13, 208, 32, 26, 169, 47, 162, 250, 33 },
+                            Salt = "10ca32d2-e9f9-49e8-bc18-bead773d9620"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "IsaSkou@yahoo.com",
+                            FirstName = "Isabel",
+                            LastName = "Skou",
+                            Password = new byte[] { 162, 227, 201, 2, 107, 82, 14, 208, 61, 101, 153, 57, 46, 90, 227, 50, 231, 193, 152, 105, 135, 8, 50, 41, 53, 46, 137, 168, 49, 202, 31, 137 },
+                            Salt = "352b561f-59b6-4f24-a358-4cef6210ab15"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Email = "badispace@gmail.com",
+                            FirstName = "Steve",
+                            LastName = "Buanga",
+                            Password = new byte[] { 49, 143, 216, 36, 231, 154, 110, 185, 177, 29, 7, 179, 254, 101, 69, 133, 202, 94, 34, 102, 125, 124, 118, 130, 189, 81, 18, 168, 125, 37, 253, 15 },
+                            Salt = "28a82494-82c2-4af3-a361-108cfa92a473"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Email = "tototata@gmail.com",
+                            FirstName = "Toto",
+                            LastName = "Tata",
+                            Password = new byte[] { 189, 195, 202, 76, 74, 90, 50, 92, 16, 80, 67, 59, 6, 184, 243, 41, 112, 21, 25, 29, 58, 157, 73, 41, 147, 178, 218, 191, 92, 48, 66, 33 },
+                            Salt = "19320766-093a-491a-8741-13e94d6a62ce"
+                        });
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Vaccination", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Vaccination", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -411,7 +703,7 @@ namespace CoronaCenter.DataBase.Migrations
                     b.ToTable("Vaccination");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Vaccine", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Vaccine", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -444,9 +736,43 @@ namespace CoronaCenter.DataBase.Migrations
                     b.ToTable("Vaccine");
 
                     b.HasCheckConstraint("CK_MinInterval", "MinInterval <= MaxInterval");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            MakerId = 1,
+                            MaxInterval = 2,
+                            MinInterval = 1,
+                            Name = "Pfizer"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            MakerId = 2,
+                            MaxInterval = 2,
+                            MinInterval = 1,
+                            Name = "AstraZeneca"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            MakerId = 3,
+                            MaxInterval = 2,
+                            MinInterval = 1,
+                            Name = "Moderna"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            MakerId = 4,
+                            MaxInterval = 2,
+                            MinInterval = 1,
+                            Name = "Johnson & Johnson"
+                        });
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Warehouse", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Warehouse", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -467,38 +793,64 @@ namespace CoronaCenter.DataBase.Migrations
                         .IsUnique();
 
                     b.ToTable("Warehouse");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AddressId = 5,
+                            Name = "Entrepot Numero1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AddressId = 6,
+                            Name = "Entrepot Numero2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AddressId = 7,
+                            Name = "Entrepot Numero3"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AddressId = 8,
+                            Name = "Entrepot Numero4"
+                        });
                 });
 
             modelBuilder.Entity("CenterVaccine", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Center", null)
+                    b.HasOne("CoronaCenter.Model.Entities.Center", null)
                         .WithMany()
                         .HasForeignKey("CentersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CoronaCenter.DataBase.Entities.Vaccine", null)
+                    b.HasOne("CoronaCenter.Model.Entities.Vaccine", null)
                         .WithMany()
                         .HasForeignKey("VaccinesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Appointment", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Appointment", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Center", "Center")
+                    b.HasOne("CoronaCenter.Model.Entities.Center", "Center")
                         .WithMany("Appointments")
                         .HasForeignKey("CenterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CoronaCenter.DataBase.Entities.Patient", "Patient")
+                    b.HasOne("CoronaCenter.Model.Entities.Patient", "Patient")
                         .WithMany("Appointments")
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("CoronaCenter.DataBase.Entities.Vaccine", "Vaccine")
+                    b.HasOne("CoronaCenter.Model.Entities.Vaccine", "Vaccine")
                         .WithMany("Appointments")
                         .HasForeignKey("VaccineId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -511,17 +863,17 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Navigation("Vaccine");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Center", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Center", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Address", "Address")
+                    b.HasOne("CoronaCenter.Model.Entities.Address", "Address")
                         .WithOne()
-                        .HasForeignKey("CoronaCenter.DataBase.Entities.Center", "AddressId")
+                        .HasForeignKey("CoronaCenter.Model.Entities.Center", "AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CoronaCenter.DataBase.Entities.Staff", "Responsible")
+                    b.HasOne("CoronaCenter.Model.Entities.Staff", "Responsible")
                         .WithOne()
-                        .HasForeignKey("CoronaCenter.DataBase.Entities.Center", "ResponsibleId")
+                        .HasForeignKey("CoronaCenter.Model.Entities.Center", "ResponsibleId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -530,21 +882,21 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Navigation("Responsible");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Lot", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Lot", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Center", "Center")
+                    b.HasOne("CoronaCenter.Model.Entities.Center", "Center")
                         .WithMany("Lots")
                         .HasForeignKey("CenterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CoronaCenter.DataBase.Entities.Vaccine", "Vaccine")
+                    b.HasOne("CoronaCenter.Model.Entities.Vaccine", "Vaccine")
                         .WithMany("Lots")
                         .HasForeignKey("VaccineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CoronaCenter.DataBase.Entities.Warehouse", "Warehouse")
+                    b.HasOne("CoronaCenter.Model.Entities.Warehouse", "Warehouse")
                         .WithMany("Lots")
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -557,9 +909,9 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Navigation("Warehouse");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Lot_Out", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.LotOut", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Lot", "Lot")
+                    b.HasOne("CoronaCenter.Model.Entities.Lot", "Lot")
                         .WithMany("Lot_Outs")
                         .HasForeignKey("LotId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -568,9 +920,9 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Navigation("Lot");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Medical_Staff", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.MedicalStaff", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Staff", "Staff")
+                    b.HasOne("CoronaCenter.Model.Entities.Staff", "Staff")
                         .WithMany("Medical_Staffs")
                         .HasForeignKey("StaffId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -579,17 +931,17 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Navigation("Staff");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Patient", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Patient", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Address", "Address")
+                    b.HasOne("CoronaCenter.Model.Entities.Address", "Address")
                         .WithOne()
-                        .HasForeignKey("CoronaCenter.DataBase.Entities.Patient", "AddressId")
+                        .HasForeignKey("CoronaCenter.Model.Entities.Patient", "AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CoronaCenter.DataBase.Entities.UserProfile", "User")
+                    b.HasOne("CoronaCenter.Model.Entities.UserProfile", "User")
                         .WithOne()
-                        .HasForeignKey("CoronaCenter.DataBase.Entities.Patient", "UserId")
+                        .HasForeignKey("CoronaCenter.Model.Entities.Patient", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -598,9 +950,9 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Schedule", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Schedule", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Center", "Center")
+                    b.HasOne("CoronaCenter.Model.Entities.Center", "Center")
                         .WithMany("Schedules")
                         .HasForeignKey("CenterId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -609,17 +961,15 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Navigation("Center");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Staff", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Staff", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Center", "Center")
+                    b.HasOne("CoronaCenter.Model.Entities.Center", "Center")
                         .WithMany("Staffs")
-                        .HasForeignKey("CenterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CenterId");
 
-                    b.HasOne("CoronaCenter.DataBase.Entities.UserProfile", "User")
+                    b.HasOne("CoronaCenter.Model.Entities.UserProfile", "User")
                         .WithOne()
-                        .HasForeignKey("CoronaCenter.DataBase.Entities.Staff", "UserId")
+                        .HasForeignKey("CoronaCenter.Model.Entities.Staff", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -628,13 +978,13 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.UserProfile", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.UserProfile", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Patient", "Patient")
+                    b.HasOne("CoronaCenter.Model.Entities.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId");
 
-                    b.HasOne("CoronaCenter.DataBase.Entities.Staff", "Staff")
+                    b.HasOne("CoronaCenter.Model.Entities.Staff", "Staff")
                         .WithMany()
                         .HasForeignKey("StaffId");
 
@@ -643,21 +993,21 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Navigation("Staff");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Vaccination", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Vaccination", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Appointment", "Appointment")
+                    b.HasOne("CoronaCenter.Model.Entities.Appointment", "Appointment")
                         .WithMany("Vaccinations")
                         .HasForeignKey("AppointmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CoronaCenter.DataBase.Entities.Lot", "Lot")
+                    b.HasOne("CoronaCenter.Model.Entities.Lot", "Lot")
                         .WithMany("Vaccinations")
                         .HasForeignKey("LotId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("CoronaCenter.DataBase.Entities.Medical_Staff", "MedicalStaff")
+                    b.HasOne("CoronaCenter.Model.Entities.MedicalStaff", "MedicalStaff")
                         .WithMany("Vaccinations")
                         .HasForeignKey("MedicalStaffId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -670,38 +1020,38 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Navigation("MedicalStaff");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Vaccine", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Vaccine", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Maker", "Maker")
+                    b.HasOne("CoronaCenter.Model.Entities.Maker", "Maker")
                         .WithMany()
                         .HasForeignKey("MakerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CoronaCenter.DataBase.Entities.Maker", null)
+                    b.HasOne("CoronaCenter.Model.Entities.Maker", null)
                         .WithMany("Vaccines")
                         .HasForeignKey("MakerId1");
 
                     b.Navigation("Maker");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Warehouse", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Warehouse", b =>
                 {
-                    b.HasOne("CoronaCenter.DataBase.Entities.Address", "Address")
+                    b.HasOne("CoronaCenter.Model.Entities.Address", "Address")
                         .WithOne()
-                        .HasForeignKey("CoronaCenter.DataBase.Entities.Warehouse", "AddressId")
+                        .HasForeignKey("CoronaCenter.Model.Entities.Warehouse", "AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Address");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Appointment", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Appointment", b =>
                 {
                     b.Navigation("Vaccinations");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Center", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Center", b =>
                 {
                     b.Navigation("Appointments");
 
@@ -712,41 +1062,41 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Navigation("Staffs");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Lot", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Lot", b =>
                 {
                     b.Navigation("Lot_Outs");
 
                     b.Navigation("Vaccinations");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Maker", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Maker", b =>
                 {
                     b.Navigation("Vaccines");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Medical_Staff", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.MedicalStaff", b =>
                 {
                     b.Navigation("Vaccinations");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Patient", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Patient", b =>
                 {
                     b.Navigation("Appointments");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Staff", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Staff", b =>
                 {
                     b.Navigation("Medical_Staffs");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Vaccine", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Vaccine", b =>
                 {
                     b.Navigation("Appointments");
 
                     b.Navigation("Lots");
                 });
 
-            modelBuilder.Entity("CoronaCenter.DataBase.Entities.Warehouse", b =>
+            modelBuilder.Entity("CoronaCenter.Model.Entities.Warehouse", b =>
                 {
                     b.Navigation("Lots");
                 });

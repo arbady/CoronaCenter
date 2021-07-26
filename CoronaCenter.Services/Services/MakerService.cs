@@ -10,7 +10,7 @@ using CoronaCenter.Services.Mapper;
 
 namespace CoronaCenter.Services.Services
 {
-    public class MakerService : BaseServices<Maker, MakerModel, MakerForm>
+    public class MakerService : BaseProvider<Maker, MakerModel, MakerForm>
     {
         public MakerService(DataContext db) : base(db, new MakerMapper())
         {

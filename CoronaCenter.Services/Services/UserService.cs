@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace CoronaCenter.Services.Services
 {
-    public class UserService : BaseServices<UserProfile, UserModel, UserForm>
+    public class UserService : BaseProvider<UserProfile, UserModel, UserForm>
     {
         public UserService(DataContext dc) : base(dc, new UserMapper())
         {

@@ -15,12 +15,15 @@ namespace CoronaCenter.Services.Services.Bases
         Read,
         Update,
         Delete,
+        Has,
         Mapping
     }
 
-    public abstract class BaseServices<Entity, Model, Form> :
-        IService<Model, Form>
-        where Entity : class, IDataModel<int>
+    public abstract class BaseServices<DataContext, Entity, Model, Form, Tid> :
+        IService<Model, Form, Tid>
+        where Entity : class, IDataModel<Tid>
+        where Tid : IComparable<Tid>
+        where DataContext : DbContext
     {
         protected DataContext Dc; 
         protected DbSet<Entity> Set;
@@ -37,15 +40,19 @@ namespace CoronaCenter.Services.Services.Bases
         
         // Pour convertir une entité en model
         // On pouurait faire plusieurs autres conversions a la fois avec cette methode
-        protected virtual Model MapEntity(Entity entity, CRUDAction action = CRUDAction.Mapping)
+        protected virtual Model MapEntityToModel(Entity entity, CRUDAction action = CRUDAction.Mapping)
         {
             return Mapper.MapEntityToModel(entity);
         }
-        protected virtual Entity MapForm(Form form, CRUDAction action = CRUDAction.Mapping)
+        protected virtual Form MapEntityToForm(Entity entity, CRUDAction action = CRUDAction.Mapping)
+        {
+            return Mapper.MapModelToForm(Mapper.MapEntityToModel(entity));
+        }
+        protected virtual Entity MapFormToEntity(Form form, CRUDAction action = CRUDAction.Mapping)
         {
             return Mapper.MapFormToEntity(form);
         }
-        protected virtual Entity MapModel(Model model, CRUDAction action = CRUDAction.Mapping)
+        protected virtual Entity MapModelToEntity(Model model, CRUDAction action = CRUDAction.Mapping)
         {
             return Mapper.MapModelToEntity(model);
         }
@@ -64,21 +71,41 @@ namespace CoronaCenter.Services.Services.Bases
 
         // Permet de traiter une entité seule, c'est une fonction back-end
         // Permet la repetabilité des Select
-        private Model OnSingleEntityRead(Entity entity)
+        private Model OnSingleEntityModel(Entity entity)
         {
-            return MapEntity(entity, CRUDAction.Read);
+            return MapEntityToModel(entity, CRUDAction.Read);
+        }
+        private Form OnSingleEntityForm(Entity entity)
+        {
+            return MapEntityToForm(entity, CRUDAction.Read);
         }
 
         public virtual IEnumerable<Model> GetAll()
         {
-            return Query.Select(OnSingleEntityRead);
+            return Query.Select(OnSingleEntityModel);
         }
 
-        public virtual Model GetById(int id)
+        public virtual Model GetById(Tid id)
         {
             return Query
-                .Where(a => a.Id == id)
-                .Select(OnSingleEntityRead)
+                .Where(a => a.Id.Equals(id))
+                .Select(OnSingleEntityModel)
+                .SingleOrDefault();
+        }
+
+        public virtual Model Get(Form form)
+        {
+            return Query
+                .Where(a => a == MapFormToEntity(form, CRUDAction.Read))
+                .Select(OnSingleEntityModel)
+                .FirstOrDefault();
+        }
+
+        public virtual Form GetToForm(Tid id)
+        {
+            return Query
+                .Where(a => a.Id.Equals(id))
+                .Select(OnSingleEntityForm)
                 .SingleOrDefault();
         }
 
@@ -86,26 +113,25 @@ namespace CoronaCenter.Services.Services.Bases
         // Cette fonction est appélée dans la fonction Insert un peu plus bas
         protected virtual Entity OnInsert(Form form)
         {
-            Entity entity = MapForm(form, CRUDAction.Create);
+            Entity entity = MapFormToEntity(form, CRUDAction.Create);
             Set.Add(entity);
             return entity;
         }
 
         // Idem que pour le OnInsert
-        protected virtual Entity OnUpdate(int id, Form form)
+        protected virtual Entity OnUpdate(Tid id, Form form)
         {
-            Entity entity = MapForm(form, CRUDAction.Update);
+            Entity entity = MapFormToEntity(form, CRUDAction.Update);
             entity.Id = id;
 
-            return Set
-                .Update(entity)
-                .Entity;
+            Set.Update(entity);
+            return entity;
         }
 
         // Idem que pour le OnInsert
-        protected virtual Entity OnDelete(int id)
+        protected virtual Entity OnDelete(Tid id)
         {
-            Entity entity = Set.FirstOrDefault(model => model.Id == id);
+            Entity entity = Set.FirstOrDefault(model => model.Id.Equals(id));
             Set.Remove(entity);
             return entity;
         }
@@ -114,23 +140,44 @@ namespace CoronaCenter.Services.Services.Bases
         {
             Entity Entity = OnInsert(form);
 
-            Dc.SaveChanges();
+            Save();
 
-            return MapEntity(Entity, CRUDAction.Create);
+            return MapEntityToModel(Entity, CRUDAction.Create);
         }
 
-        public Form Update(int id, Form form)
+        public Form Update(Tid id, Form form)
         {
             Entity Entity = OnUpdate(id, form);
 
-            Dc.SaveChanges();
+            Save();
 
-            return Mapper.MapModelToForm(Entity);
+            return MapEntityToForm(Entity, CRUDAction.Update);
         }
 
-        public void Delete(int model)
+        public void Delete(Tid id)
         {
-            OnDelete(model);
+            OnDelete(id);
+
+            Save();
+        }
+
+        public bool Has(Tid id)
+        {
+            return Set.Where(a => a.Id.Equals(id)).FirstOrDefault() != null;
+        }
+
+        public bool Has(Model model)
+        {
+            return Set.Where(a => a == MapModelToEntity(model, CRUDAction.Has)).FirstOrDefault() != null;
+        }
+
+        public bool Has(Form form)
+        {
+            return Set.Where(a => a == MapFormToEntity(form, CRUDAction.Has)).FirstOrDefault() != null;
+        }
+
+        public void Save()
+        {
             Dc.SaveChanges();
         }
     }

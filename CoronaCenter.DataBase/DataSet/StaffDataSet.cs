@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CoronaCenter.DataBase.DataSet
 {
-    internal class DataSetStaff : IEntityTypeConfiguration<Staff>
+    internal class StaffDataSet : IEntityTypeConfiguration<Staff>
     {
         public void Configure(EntityTypeBuilder<Staff> builder)
         {
@@ -17,25 +17,33 @@ namespace CoronaCenter.DataBase.DataSet
             {
                 Id = 1,
                 Grade = Model.Enums.Grade.Doctor,
-                UserId = 1,
-                CenterId = 1
-            };
-            
+                Risponsible = true,
+                UserId = 1
+            }; builder.HasData(staff_1);
+
             Staff staff_2 = new()
             {
                 Id = 2,
                 Grade = Model.Enums.Grade.Nurse,
-                UserId = 2,
-                CenterId = 1
-            };
-            
+                Risponsible = false,
+                UserId = 2
+            }; builder.HasData(staff_2);
+
             Staff staff_3 = new()
             {
                 Id = 3,
                 Grade = Model.Enums.Grade.Security,
-                UserId = 3,
-                CenterId = 1
-            };
+                Risponsible = false,
+                UserId = 3
+            }; builder.HasData(staff_3);
+            
+            Staff staff_4 = new()
+            {
+                Id = 4,
+                Grade = Model.Enums.Grade.Security,
+                Risponsible = false,
+                UserId = 4
+            }; builder.HasData(staff_4);
         }
     }
 }

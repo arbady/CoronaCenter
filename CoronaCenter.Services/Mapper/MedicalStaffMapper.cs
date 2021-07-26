@@ -42,7 +42,7 @@ namespace CoronaCenter.Services.Mapper
             };
         }
 
-        public MedicalStaffForm MapModelToForm(MedicalStaff model)
+        public MedicalStaffForm MapModelToForm(MedicalStaffModel model)
         {
             return new MedicalStaffForm
             {

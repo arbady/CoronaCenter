@@ -16,6 +16,8 @@ namespace CoronaCenter.Services.Mapper
                 DateOfBirth = entity.DateOfBirth,
                 PhoneNumber = entity.PhoneNumber,
                 MedicalIndication = entity.MedicalIndication,
+                Address = entity.Address,
+                User = entity.User
             };
 
             //return (PatientModel)entity;
@@ -23,17 +25,44 @@ namespace CoronaCenter.Services.Mapper
 
         public Patient MapFormToEntity(PatientForm form)
         {
-            throw new System.NotImplementedException();
+            return new Patient
+            {
+                Id = form.Id,
+                NISS = form.NISS,
+                DateOfBirth = form.DateOfBirth,
+                PhoneNumber = form.PhoneNumber,
+                MedicalIndication = form.MedicalIndication,
+                Address = form.Address,
+                User = form.User
+            };
         }
 
         public Patient MapModelToEntity(PatientModel model)
         {
-            throw new System.NotImplementedException();
+            return new Patient
+            {
+                Id = model.Id,
+                NISS = model.NISS,
+                DateOfBirth = model.DateOfBirth,
+                PhoneNumber = model.PhoneNumber,
+                MedicalIndication = model.MedicalIndication,
+                Address = model.Address,
+                User = model.User
+            };
         }
 
-        public PatientForm MapModelToForm(Patient entity)
+        public PatientForm MapModelToForm(PatientModel model)
         {
-            throw new System.NotImplementedException();
+            return new PatientForm
+            {
+                Id = model.Id,
+                NISS = model.NISS,
+                DateOfBirth = model.DateOfBirth,
+                PhoneNumber = model.PhoneNumber,
+                MedicalIndication = model.MedicalIndication,
+                Address = model.Address,
+                User = model.User
+            };
         }
     }
 }

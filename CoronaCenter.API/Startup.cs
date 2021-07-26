@@ -1,6 +1,12 @@
+using CoronaCenter.DataBase;
+using CoronaCenter.Model.Forms;
+using CoronaCenter.Model.Models;
+using CoronaCenter.Services.Services;
+using CoronaCenter.Services.Services.Bases;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,8 +31,15 @@ namespace CoronaCenter.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DataContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("CoronaCenterDB"))
+                );
 
             services.AddControllers();
+            
+            services.AddScoped<IBase<CenterModel, CenterForm>, CenterService>();
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CoronaCenter.API", Version = "v1" });

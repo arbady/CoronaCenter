@@ -1,11 +1,15 @@
-﻿using System;
+﻿using CoronaCenter.Model.Entities;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CoronaCenter.Model.Entities
 {
     public class Lot : IDataModel<int>
     {
         public int Id { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime DateIn { get; set; }
         public int Quantity { get; set; }
         public int VaccineId { get; set; }

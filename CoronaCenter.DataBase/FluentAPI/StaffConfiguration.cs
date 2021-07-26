@@ -24,13 +24,15 @@ namespace CoronaCenter.Model.FluentAPI
             builder.Property(s => s.UserId)
                    .IsRequired();
 
-            builder.Property(s => s.CenterId)
-                   .IsRequired();
+            //builder.Property(s => s.CenterId)
+            //       .IsRequired();
 
             //Relation
 
-            builder.HasOne(s => s.Center)
-                   .WithMany(c => c.Staffs);
+            //builder.HasOne(s => s.Center)
+            //       .WithMany(c => c.Staffs)
+            //       .HasForeignKey(s => s.CenterId)
+            //       .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(s => s.User)
                    .WithOne()

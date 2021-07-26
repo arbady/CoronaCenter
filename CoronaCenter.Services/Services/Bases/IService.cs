@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace CoronaCenter.Services.Services.Bases
 {
-    public interface IService<Model, Form>
+    public interface IService<Model, Form, Tid>
     {
         public IEnumerable<Model> GetAll();
-        public Model GetById(int id);
-        public Form Update(int id, Form form);
+        public Model GetById(Tid id);
+        public Form GetToForm(Tid id);
+        public Form Update(Tid id, Form form);
         public Model Insert(Form form);
-        public void Delete(int id);
+        public void Delete(Tid id);
+        public bool Has(Tid id);
+        public bool Has(Model Model);
+        public bool Has(Form form);
     }
 }

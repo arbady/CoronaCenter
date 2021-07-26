@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CoronaCenter.Model.FluentAPI
 {
-    public class CenterConfiguation : IEntityTypeConfiguration<Center>
+    public class CenterConfiguration : IEntityTypeConfiguration<Center>
     {
         public void Configure(EntityTypeBuilder<Center> builder)
         {
@@ -24,7 +24,7 @@ namespace CoronaCenter.Model.FluentAPI
 
             builder.Property(c => c.AddressId)
                    .IsRequired();
-            
+
             builder.Property(c => c.ResponsibleId)
                    .IsRequired();
 
@@ -41,10 +41,10 @@ namespace CoronaCenter.Model.FluentAPI
 
             builder.HasMany(c => c.Lots)
                    .WithOne(l => l.Center);
-            
-            //builder.HasMany(c => c.Appointments)
-            //       .WithOne(cal => cal.Center);
-            
+
+            builder.HasMany(c => c.Staffs)
+                   .WithOne(s => s.Center);
+
             builder.HasMany(c => c.Schedules)
                    .WithOne(sc => sc.Center);
 

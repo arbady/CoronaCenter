@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CoronaCenter.Services.Services
 {
-    public class PatientService : BaseServices<Patient, PatientModel, PatientForm>
+    public class PatientService : BaseProvider<Patient, PatientModel, PatientForm>
     {
         public PatientService(DataContext db) : base(db, new PatientMapper())
         {

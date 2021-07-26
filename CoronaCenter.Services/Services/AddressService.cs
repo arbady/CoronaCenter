@@ -9,7 +9,7 @@ using CoronaCenter.Services.Mapper;
 namespace CoronaCenter.Services.Services
 {
 
-    public class AddressService : BaseServices<Address, AddressModel, AddressForm>
+    public class AddressService : BaseProvider<Address, AddressModel, AddressForm>
     {
         public AddressService(DataContext db) : base(db, new AddressMapper())
         {

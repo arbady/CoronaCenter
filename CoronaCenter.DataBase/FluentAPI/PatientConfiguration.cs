@@ -56,6 +56,14 @@ namespace CoronaCenter.Model.FluentAPI
 
             //builder.HasMany(p => p.Calendars)
             //       .WithOne(u => u.Patient);
+
+
+            //Constraint
+            //builder.HasCheckConstraint("CK_Patient", "NISS LIKE '[0-9][0-9].[0-9][0-9].[0-9][0-9]-[0-9][0-9][0-9].[0-9][0-9]'")
+            //       //je mets un index et la contrainte d'unicité
+            //       .HasIndex(c => c.NISS)
+            //       .IsUnique();
+
         }
     }
 }

@@ -17,7 +17,9 @@ namespace CoronaCenter.Services.Mapper
             return new CenterModel {
                 Id = entity.Id,
                 Name = entity.Name,
+                AddressId = entity.AddressId,
                 Address = entity.Address,
+                ResponsibleId = entity.ResponsibleId,
                 Responsible = entity.Responsible
             };
         }
@@ -29,7 +31,7 @@ namespace CoronaCenter.Services.Mapper
                 Id = form.Id,
                 Name = form.Name,
                 Address = form.Address,
-                Responsible = form.Responsible
+                //Responsible = form.Responsible
             };
         }
 
@@ -39,19 +41,19 @@ namespace CoronaCenter.Services.Mapper
             {
                 Id = model.Id,
                 Name = model.Name,
-                Address = model.Address,
-                Responsible = model.Responsible
+                AddressId = model.AddressId,
+                //ResponsibleId = model.ResponsibleId
             };
         }
 
-        public CenterForm MapModelToForm(Center model)
+        public CenterForm MapModelToForm(CenterModel model)
         {
             return new CenterForm
             {
                 Id = model.Id,
                 Name = model.Name,
                 Address = model.Address,
-                Responsible = model.Responsible
+                //Responsible = model.Responsible
             };
         }
     }

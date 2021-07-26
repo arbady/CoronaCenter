@@ -2,6 +2,7 @@ C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\Coro
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\Tools\bin\Debug\net5.0\Tools.dll
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\Tools\bin\Debug\net5.0\ref\Tools.dll
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\Tools\bin\Debug\net5.0\Tools.pdb
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\Tools\obj\Debug\net5.0\Tools.csprojAssemblyReference.cache
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\Tools\obj\Debug\net5.0\Tools.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\Tools\obj\Debug\net5.0\Tools.AssemblyInfoInputs.cache
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\Tools\obj\Debug\net5.0\Tools.AssemblyInfo.cs

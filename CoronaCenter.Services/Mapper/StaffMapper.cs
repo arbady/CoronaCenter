@@ -44,7 +44,7 @@ namespace CoronaCenter.Services.Mapper
             };
         }
 
-        public StaffForm MapModelToForm(Staff model)
+        public StaffForm MapModelToForm(StaffModel model)
         {
             return new StaffForm
             {

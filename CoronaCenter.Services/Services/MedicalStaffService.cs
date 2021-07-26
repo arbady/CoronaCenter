@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace CoronaCenter.Services.Services
 {
-    public class MedicalStaffService : BaseServices<MedicalStaff, MedicalStaffModel, MedicalStaffForm>
+    public class MedicalStaffService : BaseProvider<MedicalStaff, MedicalStaffModel, MedicalStaffForm>
     {
         public MedicalStaffService(DataContext dc) : base(dc, new MedicalStaffMapper())
         {
@@ -21,7 +21,7 @@ namespace CoronaCenter.Services.Services
 
         protected override DbSet<MedicalStaff> GetDbSet(DataContext dc)
         {
-            return dc.Medical_Staffs;
+            return dc.MedicalStaffs;
         }
         protected override IQueryable<MedicalStaff> PrepareQuery(DbSet<MedicalStaff> Entity)
         {

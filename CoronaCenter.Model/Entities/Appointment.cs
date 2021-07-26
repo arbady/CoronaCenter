@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoronaCenter.Model.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -7,6 +8,8 @@ namespace CoronaCenter.Model.Entities
     public class Appointment : IDataModel<int>
     {
         public int Id { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime DateVacc { get; set; }
 
         [DataType(DataType.Time)]

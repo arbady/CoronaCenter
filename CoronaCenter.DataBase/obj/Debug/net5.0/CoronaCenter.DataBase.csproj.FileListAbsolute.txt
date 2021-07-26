@@ -1,7 +1,3 @@
-C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.AssemblyInfoInputs.cache
-C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.AssemblyInfo.cs
-C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.csproj.CoreCompileInputs.cache
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\CoronaCenter.DataBase.deps.json
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\CoronaCenter.DataBase.runtimeconfig.json
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\CoronaCenter.DataBase.runtimeconfig.dev.json
@@ -13,6 +9,10 @@ C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\Coro
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\CoronaCenter.Model.pdb
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\Tools.pdb
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.csprojAssemblyReference.cache
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.AssemblyInfoInputs.cache
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.AssemblyInfo.cs
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.csproj.CoreCompileInputs.cache
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.csproj.CopyComplete
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.dll
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\ref\CoronaCenter.DataBase.dll

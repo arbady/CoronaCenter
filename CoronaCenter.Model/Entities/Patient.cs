@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoronaCenter.Model.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace CoronaCenter.Model.Entities

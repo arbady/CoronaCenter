@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CoronaCenter.DataBase.Migrations
 {
-    public partial class CreationDB : Migration
+    public partial class creationDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -191,7 +191,7 @@ namespace CoronaCenter.DataBase.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Lot_Outs",
+                name: "LotOut",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -202,9 +202,9 @@ namespace CoronaCenter.DataBase.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Lot_Outs", x => x.Id);
+                    table.PrimaryKey("PK_LotOut", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Lot_Outs_Lot_LotId",
+                        name: "FK_LotOut_Lot_LotId",
                         column: x => x.LotId,
                         principalTable: "Lot",
                         principalColumn: "Id",
@@ -305,8 +305,9 @@ namespace CoronaCenter.DataBase.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Grade = table.Column<int>(type: "int", nullable: false),
+                    Risponsible = table.Column<bool>(type: "bit", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    CenterId = table.Column<int>(type: "int", nullable: false)
+                    CenterId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -316,11 +317,11 @@ namespace CoronaCenter.DataBase.Migrations
                         column: x => x.CenterId,
                         principalTable: "Center",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Medical_Staff",
+                name: "MedicalStaff",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -330,9 +331,9 @@ namespace CoronaCenter.DataBase.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Medical_Staff", x => x.Id);
+                    table.PrimaryKey("PK_MedicalStaff", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Medical_Staff_Staff_StaffId",
+                        name: "FK_MedicalStaff_Staff_StaffId",
                         column: x => x.StaffId,
                         principalTable: "Staff",
                         principalColumn: "Id",
@@ -369,6 +370,108 @@ namespace CoronaCenter.DataBase.Migrations
                         principalTable: "Staff",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Address",
+                columns: new[] { "Id", "City", "Number", "Province", "Street", "ZipCode" },
+                values: new object[,]
+                {
+                    { 1, "Rixensart", "10", 0, "Rue de la paix", 1040 },
+                    { 12, "BoitsFort", "106c", 0, "Rue Grande", 1170 },
+                    { 10, "Huy", "57", 2, "Rue Simone de Bondue", 4500 },
+                    { 9, "Tournai", "13", 1, "Cité des anges", 7500 },
+                    { 8, "Saint-Ghislain", "53", 1, "Cité des pétetites préelles", 7330 },
+                    { 7, "Colfontaine", "14A", 1, "Cité de l'Abbaye", 7340 },
+                    { 11, "Diant", "83", 4, "Impasse des maraichers", 5500 },
+                    { 5, "Namur", "121", 4, "Rue du bonheur", 5000 },
+                    { 4, "Liège", "1", 2, "Rue de la peur", 4000 },
+                    { 3, "Charleroi", "5 Bis", 1, "Rue des Oiseaux", 6000 },
+                    { 2, "Mons", "8", 1, "Rue de l'Espinette", 7000 },
+                    { 6, "Frameries", "2/3", 1, "Clos des Ormes", 7080 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Maker",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "BioNTech" },
+                    { 2, "Oxford" },
+                    { 3, "Moderna" },
+                    { 4, "Johnson & Johnson" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "UserProfile",
+                columns: new[] { "Id", "Email", "FirstName", "LastName", "Password", "PatientId", "Salt", "StaffId" },
+                values: new object[,]
+                {
+                    { 4, "badispace@gmail.com", "Steve", "Buanga", new byte[] { 49, 143, 216, 36, 231, 154, 110, 185, 177, 29, 7, 179, 254, 101, 69, 133, 202, 94, 34, 102, 125, 124, 118, 130, 189, 81, 18, 168, 125, 37, 253, 15 }, null, "28a82494-82c2-4af3-a361-108cfa92a473", null },
+                    { 1, "arnoldmpoyi@yahoo.fr", "Arnold", "Mpoyi", new byte[] { 246, 160, 244, 210, 177, 53, 4, 62, 230, 188, 163, 102, 74, 208, 17, 196, 157, 140, 150, 249, 245, 231, 138, 97, 55, 131, 70, 103, 90, 204, 52, 55 }, null, "50a7117c-e1ff-4153-828b-20fff1211385", null },
+                    { 2, "cocodeblock@gmail.com", "Corentin", "De Block", new byte[] { 135, 196, 248, 53, 211, 66, 104, 44, 53, 147, 225, 85, 231, 115, 51, 248, 82, 87, 105, 191, 37, 21, 132, 13, 208, 32, 26, 169, 47, 162, 250, 33 }, null, "10ca32d2-e9f9-49e8-bc18-bead773d9620", null },
+                    { 3, "IsaSkou@yahoo.com", "Isabel", "Skou", new byte[] { 162, 227, 201, 2, 107, 82, 14, 208, 61, 101, 153, 57, 46, 90, 227, 50, 231, 193, 152, 105, 135, 8, 50, 41, 53, 46, 137, 168, 49, 202, 31, 137 }, null, "352b561f-59b6-4f24-a358-4cef6210ab15", null },
+                    { 5, "tototata@gmail.com", "Toto", "Tata", new byte[] { 189, 195, 202, 76, 74, 90, 50, 92, 16, 80, 67, 59, 6, 184, 243, 41, 112, 21, 25, 29, 58, 157, 73, 41, 147, 178, 218, 191, 92, 48, 66, 33 }, null, "19320766-093a-491a-8741-13e94d6a62ce", null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Patient",
+                columns: new[] { "Id", "AddressId", "DateOfBirth", "MedicalIndication", "NISS", "PhoneNumber", "UserId" },
+                values: new object[] { 1, 1, new DateTime(1986, 4, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test", "86043058162", "0466423930", 5 });
+
+            migrationBuilder.InsertData(
+                table: "Staff",
+                columns: new[] { "Id", "CenterId", "Grade", "Risponsible", "UserId" },
+                values: new object[,]
+                {
+                    { 1, null, 0, true, 1 },
+                    { 2, null, 1, false, 2 },
+                    { 3, null, 2, false, 3 },
+                    { 4, null, 2, false, 4 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Vaccine",
+                columns: new[] { "Id", "MakerId", "MakerId1", "MaxInterval", "MinInterval", "Name" },
+                values: new object[,]
+                {
+                    { 1, 1, null, 2, 1, "Pfizer" },
+                    { 2, 2, null, 2, 1, "AstraZeneca" },
+                    { 3, 3, null, 2, 1, "Moderna" },
+                    { 4, 4, null, 2, 1, "Johnson & Johnson" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Warehouse",
+                columns: new[] { "Id", "AddressId", "Name" },
+                values: new object[,]
+                {
+                    { 1, 5, "Entrepot Numero1" },
+                    { 2, 6, "Entrepot Numero2" },
+                    { 3, 7, "Entrepot Numero3" },
+                    { 4, 8, "Entrepot Numero4" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Center",
+                columns: new[] { "Id", "AddressId", "Name", "ResponsibleId" },
+                values: new object[,]
+                {
+                    { 1, 9, "CV Numero1", 1 },
+                    { 2, 10, "CV Numero2", 2 },
+                    { 3, 11, "CV Numero3", 3 },
+                    { 4, 12, "CV Numero4", 4 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Lot",
+                columns: new[] { "Id", "CenterId", "DateIn", "Quantity", "VaccineId", "WarehouseId" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(2021, 4, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), 3000, 1, 1 },
+                    { 2, 2, new DateTime(2021, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 1000, 2, 2 },
+                    { 3, 3, new DateTime(2021, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), 1500, 3, 3 },
+                    { 4, 4, new DateTime(2021, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 4200, 4, 4 }
                 });
 
             migrationBuilder.CreateIndex(
@@ -419,19 +522,19 @@ namespace CoronaCenter.DataBase.Migrations
                 column: "WarehouseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Lot_Outs_LotId",
-                table: "Lot_Outs",
+                name: "IX_LotOut_LotId",
+                table: "LotOut",
                 column: "LotId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Medical_Staff_InamiNumber",
-                table: "Medical_Staff",
+                name: "IX_MedicalStaff_InamiNumber",
+                table: "MedicalStaff",
                 column: "InamiNumber",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Medical_Staff_StaffId",
-                table: "Medical_Staff",
+                name: "IX_MedicalStaff_StaffId",
+                table: "MedicalStaff",
                 column: "StaffId");
 
             migrationBuilder.CreateIndex(
@@ -532,10 +635,10 @@ namespace CoronaCenter.DataBase.Migrations
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Vaccination_Medical_Staff_MedicalStaffId",
+                name: "FK_Vaccination_MedicalStaff_MedicalStaffId",
                 table: "Vaccination",
                 column: "MedicalStaffId",
-                principalTable: "Medical_Staff",
+                principalTable: "MedicalStaff",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
 
@@ -566,7 +669,7 @@ namespace CoronaCenter.DataBase.Migrations
                 name: "CenterVaccine");
 
             migrationBuilder.DropTable(
-                name: "Lot_Outs");
+                name: "LotOut");
 
             migrationBuilder.DropTable(
                 name: "Schedule");
@@ -581,7 +684,7 @@ namespace CoronaCenter.DataBase.Migrations
                 name: "Lot");
 
             migrationBuilder.DropTable(
-                name: "Medical_Staff");
+                name: "MedicalStaff");
 
             migrationBuilder.DropTable(
                 name: "Vaccine");

@@ -43,7 +43,7 @@ namespace CoronaCenter.Services.Mapper
             return model;
         }
 
-        public AddressForm MapModelToForm(Address entity)
+        public AddressForm MapModelToForm(AddressModel entity)
         {
             return new AddressForm
             {

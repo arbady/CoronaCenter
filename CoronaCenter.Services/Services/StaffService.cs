@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace CoronaCenter.Services.Services
 {
-    public class StaffService : BaseServices<Staff, StaffModel, StaffForm>
+    public class StaffService : BaseProvider<Staff, StaffModel, StaffForm>
     {
         public StaffService(DataContext dc) : base(dc, new StaffMapper())
         {

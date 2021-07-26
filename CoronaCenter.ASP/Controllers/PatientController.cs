@@ -4,21 +4,22 @@ using CoronaCenter.Model.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using CoronaCenter.Services.Services;
+using CoronaCenter.Model.Models;
 
 namespace CoronaCenter.ASP.Controllers
 {
     public class PatientController : Controller
     {
-        private readonly PatientService _service;
+        private readonly IBase<PatientModel, PatientForm> _service;
 
-        public PatientController(PatientService service)
+        public PatientController(IBase<PatientModel, PatientForm> service)
         {
             _service = service;
         }
 
         public IActionResult Index()
         {
-            IEnumerable<Patient> model = _service.GetAll();
+            IEnumerable<PatientModel> model = _service.GetAll();
             return View(model);
         }
     }
