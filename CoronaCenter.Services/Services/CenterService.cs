@@ -23,13 +23,10 @@ namespace CoronaCenter.Services.Services
         {
             return base.PrepareQuery(Entity)
                        .Include(c => c.Staffs).ThenInclude(s => s.User)
-                       .Include(c => c.Staffs).ThenInclude(s => s.Medical_Staffs)
                        .Include(c => c.Address)
-                       .Include(c => c.Schedules)
-                       .Include(c => c.Appointments).ThenInclude(a => a.Vaccine)
-                       .Include(c => c.Lots)
                        .Include(c => c.Responsible).ThenInclude(r => r.User)
-                       .Include(c => c.Responsible).ThenInclude(r => r.Medical_Staffs);
+                       .Include(c => c.Vaccines)
+                       .Include(c => c.Schedules);
         }
     }
 }

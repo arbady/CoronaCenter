@@ -7,7 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CoronaCenter.DataBase\CoronaCenter.DataBase.csproj" />
     <ProjectReference Include="..\CoronaCenter.Model\CoronaCenter.Model.csproj" />
-    <ProjectReference Include="..\Tools\Tools.csproj" />
+    <ProjectReference Include="..\Tools\SecurityTools.csproj" />
   </ItemGroup>
 
 </Project>

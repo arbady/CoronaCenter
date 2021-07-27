@@ -13,9 +13,8 @@ namespace CoronaCenter.Model.Entities
         public Grade Grade { get; set; }
         public bool Risponsible { get; set; }
         public int UserId { get; set; }
-        //public int CenterId { get; set; }
+        public virtual MedicalStaff MedicalStaff { get; set; }
         public virtual Center Center { get; set; }
         public virtual UserProfile User { get; set; }
-        public virtual IEnumerable<MedicalStaff> Medical_Staffs { get; set; }
     }
 }

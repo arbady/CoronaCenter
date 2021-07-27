@@ -10,10 +10,12 @@ using System.Threading.Tasks;
 
 namespace CoronaCenter.Services.Mapper
 {
-    public class AddressMapper : IMapper<Address, AddressModel, AddressForm>
+    public class AddressMapper : BaseMapper, IMapper<Address, AddressModel, AddressForm>
     {
         public AddressModel MapEntityToModel(Address entity)
         {
+            if (CheckIfNull(entity)) return null;
+            
             return new AddressModel
             {
                 Id = entity.Id,
@@ -24,9 +26,10 @@ namespace CoronaCenter.Services.Mapper
                 Number = entity.Number
             };
         }
-
         public Address MapFormToEntity(AddressForm form)
         {
+            if (CheckIfNull(form)) return null;
+
             return new Address
             {
                 Id = form.Id,
@@ -40,11 +43,20 @@ namespace CoronaCenter.Services.Mapper
 
         public Address MapModelToEntity(AddressModel model)
         {
-            return model;
+            if (CheckIfNull(model)) return null;
+            return new Address {
+                Id = model.Id,
+                Province = model.Province,
+                City = model.City,
+                ZipCode = model.ZipCode,
+                Street = model.Street,
+                Number = model.Number
+            };
         }
 
         public AddressForm MapModelToForm(AddressModel entity)
         {
+            if (CheckIfNull(entity)) return null;
             return new AddressForm
             {
                 Id = entity.Id,

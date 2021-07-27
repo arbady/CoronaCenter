@@ -23,6 +23,17 @@ namespace CoronaCenter.DataBase.DataSet
                 UserId = 5,
                 AddressId = 1
             }; builder.HasData(p_1);
+
+            Patient p_2 = new()
+            {
+                Id = 2,
+                NISS = "86043058163",
+                DateOfBirth = new DateTime(1982, 02, 20),
+                PhoneNumber = "0466423932",
+                MedicalIndication = "Test2",
+                UserId = 3,
+                AddressId = 2
+            }; builder.HasData(p_2);
         }
     }
 }

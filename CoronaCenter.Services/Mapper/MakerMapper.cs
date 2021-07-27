@@ -30,7 +30,7 @@ namespace CoronaCenter.Services.Mapper
 
         public Maker MapModelToEntity(MakerModel model)
         {
-            return new MakerModel
+            return new Maker
             {
                 Id = model.Id,
                 Name = model.Name

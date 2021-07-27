@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace CoronaCenter.Model.Models
 {
-    public class MedicalStaffModel : MedicalStaff
+    public class MedicalStaffModel : IDataModel<int>
     {
+        public int Id { get; set; }
+        public string InamiNumber { get; set; }
+        public int StaffId { get; set; }
+        public Staff Staff { get; set; }
+        public IEnumerable<Vaccination> Vaccinations { get; set; }
     }
 }

@@ -10,9 +10,9 @@ namespace CoronaCenter.ASP.Controllers
 {
     public class PatientController : Controller
     {
-        private readonly IBase<PatientModel, PatientForm> _service;
+        private readonly IBase<Patient, PatientModel, PatientForm> _service;
 
-        public PatientController(IBase<PatientModel, PatientForm> service)
+        public PatientController(IBase<Patient, PatientModel, PatientForm> service)
         {
             _service = service;
         }

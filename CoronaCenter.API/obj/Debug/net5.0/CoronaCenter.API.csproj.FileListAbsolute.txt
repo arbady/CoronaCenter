@@ -48,11 +48,9 @@ C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\Coro
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\CoronaCenter.DataBase.dll
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\CoronaCenter.Model.dll
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\CoronaCenter.Services.dll
-C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\Tools.dll
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\CoronaCenter.DataBase.pdb
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\CoronaCenter.Model.pdb
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\CoronaCenter.Services.pdb
-C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\Tools.pdb
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\obj\Debug\net5.0\CoronaCenter.API.csprojAssemblyReference.cache
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\obj\Debug\net5.0\CoronaCenter.API.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\obj\Debug\net5.0\CoronaCenter.API.AssemblyInfoInputs.cache
@@ -72,3 +70,5 @@ C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\Coro
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\Humanizer.dll
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\SecurityTools.dll
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.API\bin\Debug\net5.0\SecurityTools.pdb

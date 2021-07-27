@@ -27,8 +27,8 @@ namespace CoronaCenter.Model.FluentAPI
             builder.Property(s => s.CloseHours)
                    .IsRequired();
 
-            builder.Property(s => s.DayNumber)
-                   .IsRequired();
+            //builder.Property(s => s.DayNumber)
+            //       .IsRequired();
             
             builder.Property(s => s.CenterId)
                    .IsRequired();

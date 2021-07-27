@@ -18,7 +18,7 @@ namespace CoronaCenter.DataBase.DataSet
                 {
                     Id = 1,
                     DateVacc = new DateTime(2021, 10, 09),
-                    HoursVacc = new DateTime().AddMinutes(15),
+                    HoursVacc = new DateTime(2021, 10, 09, 12,15,00),
                     PatientId = 1,
                     CenterId = 1,
                     VaccineId = 1
@@ -29,7 +29,7 @@ namespace CoronaCenter.DataBase.DataSet
                 {
                     Id = 2,
                     DateVacc = new DateTime(2021, 10, 15),
-                    HoursVacc = new DateTime().AddMinutes(15),
+                    HoursVacc = new DateTime(2021, 10, 09, 13, 15, 00),
                     PatientId = 2,
                     CenterId = 1,
                     VaccineId = 2

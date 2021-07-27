@@ -11,8 +11,8 @@ namespace CoronaCenter.Model.Entities
         [EnumDataType(typeof(Day))]
         public Day Day { get; set; }
 
-        //[DataType(DataType.Time)]
-        public string OpenHours { get; set; }
+        [DataType(DataType.Time)]
+        public DateTime OpenHours { get; set; }
 
         [DataType(DataType.Time)]
         public DateTime CloseHours { get; set; }

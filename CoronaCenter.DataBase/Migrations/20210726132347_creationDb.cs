@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CoronaCenter.DataBase.Migrations
 {
-    public partial class creationDB : Migration
+    public partial class creationDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -176,7 +176,6 @@ namespace CoronaCenter.DataBase.Migrations
                     Day = table.Column<int>(type: "int", nullable: false),
                     OpenHours = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CloseHours = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DayNumber = table.Column<int>(type: "int", nullable: false),
                     CenterId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -407,17 +406,21 @@ namespace CoronaCenter.DataBase.Migrations
                 columns: new[] { "Id", "Email", "FirstName", "LastName", "Password", "PatientId", "Salt", "StaffId" },
                 values: new object[,]
                 {
-                    { 4, "badispace@gmail.com", "Steve", "Buanga", new byte[] { 49, 143, 216, 36, 231, 154, 110, 185, 177, 29, 7, 179, 254, 101, 69, 133, 202, 94, 34, 102, 125, 124, 118, 130, 189, 81, 18, 168, 125, 37, 253, 15 }, null, "28a82494-82c2-4af3-a361-108cfa92a473", null },
-                    { 1, "arnoldmpoyi@yahoo.fr", "Arnold", "Mpoyi", new byte[] { 246, 160, 244, 210, 177, 53, 4, 62, 230, 188, 163, 102, 74, 208, 17, 196, 157, 140, 150, 249, 245, 231, 138, 97, 55, 131, 70, 103, 90, 204, 52, 55 }, null, "50a7117c-e1ff-4153-828b-20fff1211385", null },
-                    { 2, "cocodeblock@gmail.com", "Corentin", "De Block", new byte[] { 135, 196, 248, 53, 211, 66, 104, 44, 53, 147, 225, 85, 231, 115, 51, 248, 82, 87, 105, 191, 37, 21, 132, 13, 208, 32, 26, 169, 47, 162, 250, 33 }, null, "10ca32d2-e9f9-49e8-bc18-bead773d9620", null },
-                    { 3, "IsaSkou@yahoo.com", "Isabel", "Skou", new byte[] { 162, 227, 201, 2, 107, 82, 14, 208, 61, 101, 153, 57, 46, 90, 227, 50, 231, 193, 152, 105, 135, 8, 50, 41, 53, 46, 137, 168, 49, 202, 31, 137 }, null, "352b561f-59b6-4f24-a358-4cef6210ab15", null },
-                    { 5, "tototata@gmail.com", "Toto", "Tata", new byte[] { 189, 195, 202, 76, 74, 90, 50, 92, 16, 80, 67, 59, 6, 184, 243, 41, 112, 21, 25, 29, 58, 157, 73, 41, 147, 178, 218, 191, 92, 48, 66, 33 }, null, "19320766-093a-491a-8741-13e94d6a62ce", null }
+                    { 4, "badispace@gmail.com", "Steve", "Buanga", new byte[] { 47, 225, 190, 182, 193, 137, 228, 114, 90, 117, 141, 118, 218, 19, 154, 52, 30, 141, 251, 188, 208, 53, 43, 23, 226, 104, 54, 231, 175, 251, 32, 116 }, null, "93fe1f77-bc87-4275-bbf4-43024353b407", null },
+                    { 1, "arnoldmpoyi@yahoo.fr", "Arnold", "Mpoyi", new byte[] { 136, 217, 103, 250, 126, 163, 94, 0, 89, 219, 32, 202, 23, 252, 179, 201, 227, 203, 128, 123, 143, 52, 173, 147, 243, 240, 137, 133, 255, 184, 144, 212 }, null, "881238e6-30d7-4162-b912-9de7be9c1b95", null },
+                    { 2, "cocodeblock@gmail.com", "Corentin", "De Block", new byte[] { 208, 109, 60, 231, 115, 238, 72, 166, 216, 66, 34, 112, 82, 242, 111, 13, 124, 38, 67, 237, 254, 40, 215, 35, 92, 142, 172, 186, 24, 244, 222, 171 }, null, "be1f7698-90e1-48cd-a38a-9365be7cc75e", null },
+                    { 3, "IsaSkou@yahoo.com", "Isabel", "Skou", new byte[] { 207, 157, 222, 62, 187, 165, 27, 250, 76, 94, 123, 129, 142, 185, 8, 175, 122, 161, 115, 224, 17, 243, 125, 139, 28, 137, 163, 151, 155, 202, 158, 166 }, null, "01fcd12f-1144-4a97-9b57-c97108d10693", null },
+                    { 5, "tototata@gmail.com", "Toto", "Tata", new byte[] { 207, 61, 191, 34, 27, 232, 57, 146, 167, 169, 174, 165, 137, 103, 183, 86, 87, 105, 33, 194, 31, 37, 111, 200, 70, 147, 45, 27, 156, 38, 57, 13 }, null, "6ebdde99-b5bf-460b-bef0-8e68b6a43162", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Patient",
                 columns: new[] { "Id", "AddressId", "DateOfBirth", "MedicalIndication", "NISS", "PhoneNumber", "UserId" },
-                values: new object[] { 1, 1, new DateTime(1986, 4, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test", "86043058162", "0466423930", 5 });
+                values: new object[,]
+                {
+                    { 2, 2, new DateTime(1982, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test2", "86043058163", "0466423932", 3 },
+                    { 1, 1, new DateTime(1986, 4, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test", "86043058162", "0466423930", 5 }
+                });
 
             migrationBuilder.InsertData(
                 table: "Staff",
@@ -464,6 +467,24 @@ namespace CoronaCenter.DataBase.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "MedicalStaff",
+                columns: new[] { "Id", "InamiNumber", "StaffId" },
+                values: new object[,]
+                {
+                    { 1, "12345678911", 1 },
+                    { 2, "12345678912", 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Appointment",
+                columns: new[] { "Id", "CenterId", "DateVacc", "HoursVacc", "PatientId", "VaccineId" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(2021, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 9, 12, 15, 0, 0, DateTimeKind.Unspecified), 1, 1 },
+                    { 2, 1, new DateTime(2021, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 9, 13, 15, 0, 0, DateTimeKind.Unspecified), 2, 2 }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Lot",
                 columns: new[] { "Id", "CenterId", "DateIn", "Quantity", "VaccineId", "WarehouseId" },
                 values: new object[,]
@@ -473,6 +494,16 @@ namespace CoronaCenter.DataBase.Migrations
                     { 3, 3, new DateTime(2021, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), 1500, 3, 3 },
                     { 4, 4, new DateTime(2021, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 4200, 4, 4 }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Vaccination",
+                columns: new[] { "Id", "AppointmentId", "LotId", "MedicalStaffId" },
+                values: new object[] { 1, 1, 1, 1 });
+
+            migrationBuilder.InsertData(
+                table: "Vaccination",
+                columns: new[] { "Id", "AppointmentId", "LotId", "MedicalStaffId" },
+                values: new object[] { 2, 2, 1, 2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Appointment_CenterId",

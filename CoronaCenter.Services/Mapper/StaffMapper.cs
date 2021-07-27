@@ -10,18 +10,28 @@ using System.Threading.Tasks;
 
 namespace CoronaCenter.Services.Mapper
 {
-    class StaffMapper : IMapper<Staff, StaffModel, StaffForm>
+    public class StaffMapper : IMapper<Staff, StaffModel, StaffForm>
     {
         public StaffModel MapEntityToModel(Staff entity)
         {
             return new StaffModel { 
                 Id = entity.Id,
                 Grade = entity.Grade,
+                Risponsible = entity.Risponsible,
+                UserId = entity.UserId,
                 Center = entity.Center,
                 User = entity.User
             };
         }
 
+        public StaffLiteModel MapEntityToLiteModel(Staff entity)
+        {
+            return new StaffLiteModel { 
+                Id = entity.Id,
+                Grade = entity.Grade,
+                Risponsible = entity.Risponsible
+            };
+        }
         public Staff MapFormToEntity(StaffForm form)
         {
             return new Staff

@@ -1,4 +1,5 @@
-﻿using CoronaCenter.Model.Forms;
+﻿using CoronaCenter.Model.Entities;
+using CoronaCenter.Model.Forms;
 using CoronaCenter.Model.Models;
 using CoronaCenter.Services.Services;
 using CoronaCenter.Services.Services.Bases;
@@ -12,13 +13,13 @@ namespace CoronaCenter.ASP.Controllers
 {
     public class CenterController : Controller
     {
-        private readonly IBase<CenterModel, CenterForm> _serviceCenter;
-        private readonly IBase<AddressModel, AddressForm> _serviceAddress;
-        private readonly IBase<StaffModel, StaffForm> _serviceStaff;
+        private readonly IBase<Center, CenterModel, CenterForm> _serviceCenter;
+        private readonly IBase<Address, AddressModel, AddressForm> _serviceAddress;
+        private readonly IBase<Staff, StaffModel, StaffForm> _serviceStaff;
 
-        public CenterController(IBase<CenterModel, CenterForm> serviceCenter, 
-                                IBase<AddressModel, AddressForm> serviceAddress, 
-                                IBase<StaffModel, StaffForm> serviceStaff)
+        public CenterController(IBase<Center, CenterModel, CenterForm> serviceCenter, 
+                                IBase<Address, AddressModel, AddressForm> serviceAddress, 
+                                IBase<Staff, StaffModel, StaffForm> serviceStaff)
         {
             _serviceCenter = serviceCenter;
             _serviceAddress = serviceAddress;

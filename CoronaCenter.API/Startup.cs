@@ -1,21 +1,19 @@
 using CoronaCenter.DataBase;
+using CoronaCenter.Model.Entities;
 using CoronaCenter.Model.Forms;
 using CoronaCenter.Model.Models;
 using CoronaCenter.Services.Services;
 using CoronaCenter.Services.Services.Bases;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace CoronaCenter.API
 {
@@ -36,13 +34,40 @@ namespace CoronaCenter.API
                 );
 
             services.AddControllers();
-            
-            services.AddScoped<IBase<CenterModel, CenterForm>, CenterService>();
 
+            //services.AddScoped<DataContext>();
+
+            services.AddScoped<IBase<Center, CenterModel, CenterForm>, CenterService>();
+            services.AddScoped<IBase<Vaccine, VaccineModel, VaccineForm>, VaccineService>();
+            services.AddScoped<IUserService, UserService>();
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CoronaCenter.API", Version = "v1" });
+            });
+
+            IConfigurationSection jwtSection = Configuration.GetSection("JWTSettings");
+            services.Configure<JWTSettings>(jwtSection);
+
+            var appSettings = jwtSection.Get<JWTSettings>();
+            var key = Encoding.ASCII.GetBytes(appSettings.SecretKey);
+
+            services.AddAuthentication(a =>
+            {
+                a.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                a.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(b =>
+            {
+                b.RequireHttpsMetadata = true;
+                b.SaveToken = true;
+                b.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
             });
         }
 
@@ -57,6 +82,8 @@ namespace CoronaCenter.API
             }
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

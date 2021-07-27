@@ -1551,7 +1551,7 @@
           "CoronaCenter.Model": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
-          "Tools": "1.0.0"
+          "SecurityTools": "1.0.0"
         },
         "compile": {
           "bin/placeholder/CoronaCenter.DataBase.dll": {}
@@ -1566,7 +1566,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore": "5.0.8",
-          "Tools": "1.0.0"
+          "SecurityTools": "1.0.0"
         },
         "compile": {
           "bin/placeholder/CoronaCenter.Model.dll": {}
@@ -1581,7 +1581,7 @@
         "dependencies": {
           "CoronaCenter.DataBase": "1.0.0",
           "CoronaCenter.Model": "1.0.0",
-          "Tools": "1.0.0"
+          "SecurityTools": "1.0.0"
         },
         "compile": {
           "bin/placeholder/CoronaCenter.Services.dll": {}
@@ -1590,14 +1590,17 @@
           "bin/placeholder/CoronaCenter.Services.dll": {}
         }
       },
-      "Tools/1.0.0": {
+      "SecurityTools/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.8"
+        },
         "compile": {
-          "bin/placeholder/Tools.dll": {}
+          "bin/placeholder/SecurityTools.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Tools.dll": {}
+          "bin/placeholder/SecurityTools.dll": {}
         }
       }
     }
@@ -5774,10 +5777,10 @@
       "path": "../CoronaCenter.Services/CoronaCenter.Services.csproj",
       "msbuildProject": "../CoronaCenter.Services/CoronaCenter.Services.csproj"
     },
-    "Tools/1.0.0": {
+    "SecurityTools/1.0.0": {
       "type": "project",
-      "path": "../Tools/Tools.csproj",
-      "msbuildProject": "../Tools/Tools.csproj"
+      "path": "../Tools/SecurityTools.csproj",
+      "msbuildProject": "../Tools/SecurityTools.csproj"
     }
   },
   "projectFileDependencyGroups": {

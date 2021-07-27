@@ -5,9 +5,7 @@ C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\Coro
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\ref\CoronaCenter.DataBase.dll
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\CoronaCenter.DataBase.pdb
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\CoronaCenter.Model.dll
-C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\Tools.dll
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\CoronaCenter.Model.pdb
-C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\Tools.pdb
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.csprojAssemblyReference.cache
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.AssemblyInfoInputs.cache
@@ -18,3 +16,5 @@ C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\Coro
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\ref\CoronaCenter.DataBase.dll
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.pdb
 C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\obj\Debug\net5.0\CoronaCenter.DataBase.genruntimeconfig.cache
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\SecurityTools.dll
+C:\Users\arnol\Downloads\TECHNOFUTUR TIC\Cours Web API\CoronaCenter Project\CoronaCenter\CoronaCenter.DataBase\bin\Debug\net5.0\SecurityTools.pdb

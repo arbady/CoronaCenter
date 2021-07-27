@@ -20,7 +20,7 @@ namespace CoronaCenter.Services.Services.Bases
     }
 
     public abstract class BaseServices<DataContext, Entity, Model, Form, Tid> :
-        IService<Model, Form, Tid>
+        IService<Entity, Model, Form, Tid>
         where Entity : class, IDataModel<Tid>
         where Tid : IComparable<Tid>
         where DataContext : DbContext
@@ -32,6 +32,8 @@ namespace CoronaCenter.Services.Services.Bases
 
         public BaseServices(DataContext dc, IMapper<Entity, Model, Form> mapper)
         {
+            if (dc is null) throw new ArgumentNullException();
+            
             Dc = dc;
             Set = GetDbSet(dc);
             Query = PrepareQuery(Set);
@@ -90,6 +92,13 @@ namespace CoronaCenter.Services.Services.Bases
             return Query
                 .Where(a => a.Id.Equals(id))
                 .Select(OnSingleEntityModel)
+                .SingleOrDefault();
+        }
+
+        public virtual Entity GetEntity(Tid id)
+        {
+            return Query
+                .Where(a => a.Id.Equals(id))
                 .SingleOrDefault();
         }
 

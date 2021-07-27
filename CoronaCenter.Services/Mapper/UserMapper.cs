@@ -2,11 +2,13 @@
 using CoronaCenter.Model.Forms;
 using CoronaCenter.Model.Models;
 using CoronaCenter.Services.Services.Bases;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tools;
 
 namespace CoronaCenter.Services.Mapper
 {
@@ -25,13 +27,16 @@ namespace CoronaCenter.Services.Mapper
 
         public UserProfile MapFormToEntity(UserForm form)
         {
-            return new UserProfile
+            UserProfile u = new UserProfile
             {
                 Id = form.Id,
                 FirstName = form.FirstName,
                 LastName = form.LastName,
-                Email = form.Email
+                Email = form.Email,
+                Salt = Guid.NewGuid().ToString()
             };
+            u.Password = PasswordHasher.Hashing<UserProfile>(u, form.Password, u => u.Salt);
+            return u;
         }
 
         public UserProfile MapModelToEntity(UserModel model)

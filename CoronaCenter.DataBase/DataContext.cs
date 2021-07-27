@@ -4,6 +4,7 @@ using CoronaCenter.Model.Entities;
 using CoronaCenter.Model.FluentAPI;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using CoronaCenter.DataBase.DataSet;
+using System.Linq;
 
 namespace CoronaCenter.DataBase
 {
@@ -62,25 +63,20 @@ namespace CoronaCenter.DataBase
             modelBuilder.ApplyConfiguration(new UserDataSet());
             modelBuilder.ApplyConfiguration(new PatientDataSet());
             modelBuilder.ApplyConfiguration(new MakerDataSet());
+            modelBuilder.ApplyConfiguration(new ScheduleDataSet());
             modelBuilder.ApplyConfiguration(new StaffDataSet());
             modelBuilder.ApplyConfiguration(new MedicalStaffDataSet());
             modelBuilder.ApplyConfiguration(new WarehouseDataSet());
             modelBuilder.ApplyConfiguration(new VaccineDataSet());
             modelBuilder.ApplyConfiguration(new LotDataSet());
             modelBuilder.ApplyConfiguration(new AppointmentDataSet());
+            modelBuilder.ApplyConfiguration(new VaccinationDataSet());
 
-
-            //UserProfile user_1 = new ()
-            //{
-            //    Id = 1,
-            //    FirstName = "Samuel",
-            //    LastName = "Legrain",
-            //    Email = "samuel.legrain@bstorm.be",
-            //    Salt = Guid.NewGuid().ToString()
-            //};
-            //user_1.Password = PasswordHasher.Hashing<UserProfile>(user_1, "test1234=", u => u.Salt);
-            //modelBuilder.Entity<UserProfile>().HasData(user_1);
-
+            //this.Centers.Find(1).Vaccines.Append(this.Vaccines.Find(1));
+            //this.Centers.Find(1).Vaccines.Append(this.Vaccines.Find(2));
+            //this.SaveChanges();
+            modelBuilder.Entity("CenterVaccine").HasData(new { CentersId = 1, VaccinesId = 1 });
+            modelBuilder.Entity("CenterVaccine").HasData(new { CentersId = 1, VaccinesId = 2 });
         }
     }
 }

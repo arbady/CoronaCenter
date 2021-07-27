@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "SWflrWKjqhWASjrabZv6orvFDzmdBAFIJFU2pbL56NpYwDycYSCq+03QFIUamhQm1Gq4wmm7WZQENI4Q34XKuA==",
+  "dgSpecHash": "trvg3cAgxoP8GU/T/qlzaCo6dyh8m5KkKgbt9PDKZoPzpB7dnCm4O9d/N6vVC+VDUS8aPdVfAQzuQHfHFIjVFw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\Tools.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\SecurityTools.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\arnol\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.8\\microsoft.aspnetcore.authentication.jwtbearer.5.0.8.nupkg.sha512",
+    "C:\\Users\\arnol\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\arnol\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.7.1\\microsoft.identitymodel.jsonwebtokens.6.7.1.nupkg.sha512",
+    "C:\\Users\\arnol\\.nuget\\packages\\microsoft.identitymodel.logging\\6.7.1\\microsoft.identitymodel.logging.6.7.1.nupkg.sha512",
+    "C:\\Users\\arnol\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.7.1\\microsoft.identitymodel.protocols.6.7.1.nupkg.sha512",
+    "C:\\Users\\arnol\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.7.1\\microsoft.identitymodel.protocols.openidconnect.6.7.1.nupkg.sha512",
+    "C:\\Users\\arnol\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.7.1\\microsoft.identitymodel.tokens.6.7.1.nupkg.sha512",
+    "C:\\Users\\arnol\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.7.1\\system.identitymodel.tokens.jwt.6.7.1.nupkg.sha512",
+    "C:\\Users\\arnol\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -32,6 +32,18 @@ namespace CoronaCenter.DataBase.Migrations
                     b.HasIndex("VaccinesId");
 
                     b.ToTable("CenterVaccine");
+
+                    b.HasData(
+                        new
+                        {
+                            CentersId = 1,
+                            VaccinesId = 1
+                        },
+                        new
+                        {
+                            CentersId = 1,
+                            VaccinesId = 2
+                        });
                 });
 
             modelBuilder.Entity("CoronaCenter.Model.Entities.Address", b =>
@@ -219,9 +231,18 @@ namespace CoronaCenter.DataBase.Migrations
                             Id = 1,
                             CenterId = 1,
                             DateVacc = new DateTime(2021, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            HoursVacc = new DateTime(1, 1, 1, 0, 15, 0, 0, DateTimeKind.Unspecified),
+                            HoursVacc = new DateTime(2021, 10, 9, 12, 15, 0, 0, DateTimeKind.Unspecified),
                             PatientId = 1,
                             VaccineId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CenterId = 1,
+                            DateVacc = new DateTime(2021, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            HoursVacc = new DateTime(2021, 10, 9, 13, 15, 0, 0, DateTimeKind.Unspecified),
+                            PatientId = 2,
+                            VaccineId = 2
                         });
                 });
 
@@ -438,9 +459,24 @@ namespace CoronaCenter.DataBase.Migrations
                     b.HasIndex("InamiNumber")
                         .IsUnique();
 
-                    b.HasIndex("StaffId");
+                    b.HasIndex("StaffId")
+                        .IsUnique();
 
                     b.ToTable("MedicalStaff");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            InamiNumber = "12345678911",
+                            StaffId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            InamiNumber = "12345678912",
+                            StaffId = 2
+                        });
                 });
 
             modelBuilder.Entity("CoronaCenter.Model.Entities.Patient", b =>
@@ -497,6 +533,16 @@ namespace CoronaCenter.DataBase.Migrations
                             NISS = "86043058162",
                             PhoneNumber = "0466423930",
                             UserId = 5
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AddressId = 2,
+                            DateOfBirth = new DateTime(1982, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            MedicalIndication = "Test2",
+                            NISS = "86043058163",
+                            PhoneNumber = "0466423932",
+                            UserId = 3
                         });
                 });
 
@@ -516,9 +562,6 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Property<int>("Day")
                         .HasColumnType("int");
 
-                    b.Property<int>("DayNumber")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("OpenHours")
                         .HasColumnType("datetime2");
 
@@ -527,6 +570,32 @@ namespace CoronaCenter.DataBase.Migrations
                     b.HasIndex("CenterId");
 
                     b.ToTable("Schedule");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CenterId = 1,
+                            CloseHours = new DateTime(2021, 10, 9, 13, 0, 0, 0, DateTimeKind.Unspecified),
+                            Day = 0,
+                            OpenHours = new DateTime(2021, 10, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CenterId = 1,
+                            CloseHours = new DateTime(2021, 10, 9, 13, 0, 0, 0, DateTimeKind.Unspecified),
+                            Day = 1,
+                            OpenHours = new DateTime(2021, 10, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CenterId = 2,
+                            CloseHours = new DateTime(2021, 10, 9, 13, 0, 0, 0, DateTimeKind.Unspecified),
+                            Day = 2,
+                            OpenHours = new DateTime(2021, 10, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("CoronaCenter.Model.Entities.Staff", b =>
@@ -614,24 +683,14 @@ namespace CoronaCenter.DataBase.Migrations
                         .IsRequired()
                         .HasColumnType("VARBINARY(32)");
 
-                    b.Property<int?>("PatientId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Salt")
                         .IsRequired()
                         .HasColumnType("CHAR(36)");
-
-                    b.Property<int?>("StaffId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("Email")
                         .IsUnique();
-
-                    b.HasIndex("PatientId");
-
-                    b.HasIndex("StaffId");
 
                     b.ToTable("UserProfile");
 
@@ -644,8 +703,8 @@ namespace CoronaCenter.DataBase.Migrations
                             Email = "arnoldmpoyi@yahoo.fr",
                             FirstName = "Arnold",
                             LastName = "Mpoyi",
-                            Password = new byte[] { 163, 138, 104, 158, 236, 128, 170, 120, 216, 97, 228, 55, 100, 32, 146, 5, 184, 113, 230, 236, 197, 239, 88, 111, 181, 50, 54, 115, 214, 102, 205, 86 },
-                            Salt = "71260c9f-b841-479a-8c57-25c53b8a4128"
+                            Password = new byte[] { 25, 78, 175, 207, 37, 209, 117, 182, 211, 149, 103, 251, 32, 212, 165, 34, 166, 125, 139, 224, 19, 3, 24, 243, 207, 163, 154, 220, 236, 15, 172, 51 },
+                            Salt = "6201101a-13aa-4bb9-ad9d-13384bb7b7e3"
                         },
                         new
                         {
@@ -653,8 +712,8 @@ namespace CoronaCenter.DataBase.Migrations
                             Email = "cocodeblock@gmail.com",
                             FirstName = "Corentin",
                             LastName = "De Block",
-                            Password = new byte[] { 103, 24, 125, 143, 128, 114, 181, 204, 83, 231, 166, 127, 102, 202, 250, 73, 235, 225, 129, 83, 21, 208, 119, 36, 222, 1, 232, 190, 226, 19, 29, 70 },
-                            Salt = "fdc78ec3-9ebe-4145-9b25-92ba6e3ba69b"
+                            Password = new byte[] { 66, 225, 146, 73, 246, 63, 217, 141, 27, 167, 215, 169, 175, 160, 24, 208, 163, 240, 133, 223, 166, 56, 155, 253, 152, 240, 43, 6, 107, 138, 152, 17 },
+                            Salt = "1330940e-e1ac-412f-a5fc-e3a27ea0358e"
                         },
                         new
                         {
@@ -662,8 +721,8 @@ namespace CoronaCenter.DataBase.Migrations
                             Email = "IsaSkou@yahoo.com",
                             FirstName = "Isabel",
                             LastName = "Skou",
-                            Password = new byte[] { 48, 201, 3, 119, 74, 243, 125, 101, 175, 177, 90, 171, 109, 85, 142, 204, 39, 116, 96, 75, 9, 190, 34, 5, 136, 231, 29, 255, 85, 147, 46, 213 },
-                            Salt = "a75d7839-31e5-407a-b8ab-1348acabac69"
+                            Password = new byte[] { 157, 95, 9, 56, 225, 87, 128, 219, 26, 227, 50, 107, 188, 29, 194, 225, 64, 191, 128, 4, 174, 236, 124, 230, 168, 241, 201, 132, 182, 51, 210, 164 },
+                            Salt = "e3c8688a-3405-46d1-b0fa-1d6d04188cb8"
                         },
                         new
                         {
@@ -671,8 +730,8 @@ namespace CoronaCenter.DataBase.Migrations
                             Email = "badispace@gmail.com",
                             FirstName = "Steve",
                             LastName = "Buanga",
-                            Password = new byte[] { 174, 134, 107, 154, 192, 106, 213, 57, 9, 216, 2, 3, 108, 105, 56, 196, 234, 238, 239, 2, 158, 236, 152, 214, 136, 8, 225, 23, 165, 104, 172, 8 },
-                            Salt = "09f2193e-15c3-4987-864f-81d442961832"
+                            Password = new byte[] { 24, 50, 128, 22, 95, 151, 6, 237, 163, 175, 209, 228, 246, 203, 204, 209, 160, 85, 86, 35, 99, 121, 222, 206, 207, 202, 247, 228, 19, 43, 40, 152 },
+                            Salt = "ff53545d-62a7-4c55-9ddb-7c965870763a"
                         },
                         new
                         {
@@ -680,8 +739,8 @@ namespace CoronaCenter.DataBase.Migrations
                             Email = "tototata@gmail.com",
                             FirstName = "Toto",
                             LastName = "Tata",
-                            Password = new byte[] { 4, 67, 20, 130, 181, 121, 172, 182, 175, 65, 234, 199, 83, 238, 181, 130, 24, 230, 85, 119, 167, 38, 89, 25, 110, 0, 164, 157, 48, 6, 115, 239 },
-                            Salt = "30c701cf-4f92-455b-893b-a16e494eabf4"
+                            Password = new byte[] { 150, 78, 69, 74, 224, 97, 0, 125, 142, 66, 39, 147, 106, 55, 138, 224, 29, 243, 79, 55, 241, 246, 6, 149, 128, 138, 243, 80, 147, 95, 70, 122 },
+                            Salt = "730027d2-5c95-4a8d-a62e-277f83060964"
                         });
                 });
 
@@ -710,6 +769,22 @@ namespace CoronaCenter.DataBase.Migrations
                     b.HasIndex("MedicalStaffId");
 
                     b.ToTable("Vaccination");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AppointmentId = 1,
+                            LotId = 1,
+                            MedicalStaffId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AppointmentId = 2,
+                            LotId = 1,
+                            MedicalStaffId = 2
+                        });
                 });
 
             modelBuilder.Entity("CoronaCenter.Model.Entities.Vaccine", b =>
@@ -932,9 +1007,9 @@ namespace CoronaCenter.DataBase.Migrations
             modelBuilder.Entity("CoronaCenter.Model.Entities.MedicalStaff", b =>
                 {
                     b.HasOne("CoronaCenter.Model.Entities.Staff", "Staff")
-                        .WithMany("Medical_Staffs")
-                        .HasForeignKey("StaffId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithOne("MedicalStaff")
+                        .HasForeignKey("CoronaCenter.Model.Entities.MedicalStaff", "StaffId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Staff");
@@ -949,7 +1024,7 @@ namespace CoronaCenter.DataBase.Migrations
                         .IsRequired();
 
                     b.HasOne("CoronaCenter.Model.Entities.UserProfile", "User")
-                        .WithOne()
+                        .WithOne("Patient")
                         .HasForeignKey("CoronaCenter.Model.Entities.Patient", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -977,7 +1052,7 @@ namespace CoronaCenter.DataBase.Migrations
                         .HasForeignKey("CenterId");
 
                     b.HasOne("CoronaCenter.Model.Entities.UserProfile", "User")
-                        .WithOne()
+                        .WithOne("Staff")
                         .HasForeignKey("CoronaCenter.Model.Entities.Staff", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -985,21 +1060,6 @@ namespace CoronaCenter.DataBase.Migrations
                     b.Navigation("Center");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("CoronaCenter.Model.Entities.UserProfile", b =>
-                {
-                    b.HasOne("CoronaCenter.Model.Entities.Patient", "Patient")
-                        .WithMany()
-                        .HasForeignKey("PatientId");
-
-                    b.HasOne("CoronaCenter.Model.Entities.Staff", "Staff")
-                        .WithMany()
-                        .HasForeignKey("StaffId");
-
-                    b.Navigation("Patient");
-
-                    b.Navigation("Staff");
                 });
 
             modelBuilder.Entity("CoronaCenter.Model.Entities.Vaccination", b =>
@@ -1095,7 +1155,14 @@ namespace CoronaCenter.DataBase.Migrations
 
             modelBuilder.Entity("CoronaCenter.Model.Entities.Staff", b =>
                 {
-                    b.Navigation("Medical_Staffs");
+                    b.Navigation("MedicalStaff");
+                });
+
+            modelBuilder.Entity("CoronaCenter.Model.Entities.UserProfile", b =>
+                {
+                    b.Navigation("Patient");
+
+                    b.Navigation("Staff");
                 });
 
             modelBuilder.Entity("CoronaCenter.Model.Entities.Vaccine", b =>

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoronaCenter.DataBase", "CoronaCenter.DataBase\CoronaCenter.DataBase.csproj", "{7AD63064-32FD-4397-A5A5-1B5E036A0644}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools", "Tools\Tools.csproj", "{46023E79-A9A2-431E-BDE4-CC6DAA1748E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecurityTools", "Tools\SecurityTools.csproj", "{46023E79-A9A2-431E-BDE4-CC6DAA1748E9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoronaCenter.ASP", "CoronaCenter.ASP\CoronaCenter.ASP.csproj", "{7CB77356-E0BA-4DCE-97F7-6C021E2A9E1D}"
 EndProject
@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoronaCenter.Model", "Coron
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoronaCenter.API", "CoronaCenter.API\CoronaCenter.API.csproj", "{AAA14056-56E6-4A41-B7F1-2DA6C13F8D7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoronaCenter.Services", "CoronaCenter.Services\CoronaCenter.Services.csproj", "{B68B54AD-845D-4FDA-AAD1-B5149EA8DD68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoronaCenter.Services", "CoronaCenter.Services\CoronaCenter.Services.csproj", "{B68B54AD-845D-4FDA-AAD1-B5149EA8DD68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

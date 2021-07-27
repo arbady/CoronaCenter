@@ -35,8 +35,8 @@
               "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\CoronaCenter.Model\\CoronaCenter.Model.csproj": {
                 "projectPath": "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\CoronaCenter.Model\\CoronaCenter.Model.csproj"
               },
-              "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\Tools.csproj": {
-                "projectPath": "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\Tools.csproj"
+              "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\SecurityTools.csproj": {
+                "projectPath": "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\SecurityTools.csproj"
               }
             }
           }
@@ -113,8 +113,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\Tools.csproj": {
-                "projectPath": "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\Tools.csproj"
+              "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\SecurityTools.csproj": {
+                "projectPath": "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\SecurityTools.csproj"
               }
             }
           }
@@ -163,12 +163,12 @@
         }
       }
     },
-    "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\Tools.csproj": {
+    "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\SecurityTools.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\Tools.csproj",
-        "projectName": "Tools",
-        "projectPath": "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\Tools.csproj",
+        "projectUniqueName": "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\SecurityTools.csproj",
+        "projectName": "SecurityTools",
+        "projectPath": "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\SecurityTools.csproj",
         "packagesPath": "C:\\Users\\arnol\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\arnol\\Downloads\\TECHNOFUTUR TIC\\Cours Web API\\CoronaCenter Project\\CoronaCenter\\Tools\\obj\\",
         "projectStyle": "PackageReference",
@@ -202,6 +202,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

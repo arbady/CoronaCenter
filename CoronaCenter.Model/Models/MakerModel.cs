@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace CoronaCenter.Model.Models
 {
-    public class MakerModel : Maker
+    public class MakerModel : IDataModel<int>
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public IEnumerable<Vaccine> Vaccines { get; set; }
     }
 }

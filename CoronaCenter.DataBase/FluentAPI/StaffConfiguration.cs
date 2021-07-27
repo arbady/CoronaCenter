@@ -29,14 +29,10 @@ namespace CoronaCenter.Model.FluentAPI
 
             //Relation
 
-            //builder.HasOne(s => s.Center)
-            //       .WithMany(c => c.Staffs)
-            //       .HasForeignKey(s => s.CenterId)
-            //       .OnDelete(DeleteBehavior.Restrict);
-
-            builder.HasOne(s => s.User)
-                   .WithOne()
-                   .HasForeignKey<Staff>("UserId");
+            builder.HasOne(s => s.MedicalStaff)
+                   .WithOne(ms => ms.Staff)
+                   .HasForeignKey<MedicalStaff>(s => s.StaffId)
+                   .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

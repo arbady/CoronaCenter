@@ -3,6 +3,7 @@ using CoronaCenter.Model.Forms;
 using CoronaCenter.Model.Models;
 using CoronaCenter.Services.Services;
 using CoronaCenter.Services.Services.Bases;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -17,11 +18,17 @@ namespace CoronaCenter.API.Controllers
     [Route("[controller]")]
     public class CenterController : ControllerBase
     {
-        private readonly IBase<CenterModel, CenterForm> centerService;
+        private readonly IBase<Center, CenterModel, CenterForm> centerService;
+        private readonly IBase<Vaccine, VaccineModel, VaccineForm> vaccineService;
 
-        public CenterController(IBase<CenterModel, CenterForm> centerService)
+        public CenterController(IBase<Center, CenterModel, CenterForm> centerService, 
+                                IBase<Vaccine, VaccineModel, VaccineForm> vaccineService)
         {
             this.centerService = centerService;
+            this.vaccineService = vaccineService;
+
+            //centerService.GetEntity(1).Vaccines.Append(vaccineService.GetEntity(1));
+            //centerService.Save();
         }
 
         /// <summary>
@@ -30,7 +37,7 @@ namespace CoronaCenter.API.Controllers
         /// <returns>ensemble des centres</returns>
         //GET: api/<CenterController>
         [HttpGet]
-        public ActionResult<IEnumerable<Center>> GetAll()
+        public ActionResult<IEnumerable<CenterModel>> GetAll()
         {
             try
             {
@@ -52,8 +59,9 @@ namespace CoronaCenter.API.Controllers
         /// <param name="id">id d'un centre</param>
         /// <returns>infos d'un centre</returns>
         // GET api/<CenterController>/2
+        [Authorize(Roles = "Staff")]
         [HttpGet("{id:int}")]
-        public ActionResult<Center> GetById(int id)
+        public ActionResult<CenterModel> GetById(int id)
         {
             try
             {

@@ -46,9 +46,7 @@ namespace CoronaCenter.Model.FluentAPI
 
             //Relation
 
-            builder.HasOne(p => p.User)
-                   .WithOne()
-                   .HasForeignKey<Patient>("UserId");
+            
 
             builder.HasOne(w => w.Address)
                    .WithOne()

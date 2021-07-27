@@ -18,6 +18,6 @@ namespace CoronaCenter.Model.Forms
         public int LotId { get; set; }
 
         [Required]
-        public int CalandarId { get; set; }
+        public int AppointmentId { get; set; }
     }
 }

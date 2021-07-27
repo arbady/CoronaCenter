@@ -1364,7 +1364,7 @@
           "CoronaCenter.Model": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
-          "Tools": "1.0.0"
+          "SecurityTools": "1.0.0"
         },
         "runtime": {
           "CoronaCenter.DataBase.dll": {}
@@ -1377,7 +1377,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore": "5.0.8",
-          "Tools": "1.0.0"
+          "SecurityTools": "1.0.0"
         },
         "runtime": {
           "CoronaCenter.Model.dll": {}
@@ -1390,7 +1390,7 @@
         "dependencies": {
           "CoronaCenter.DataBase": "1.0.0",
           "CoronaCenter.Model": "1.0.0",
-          "Tools": "1.0.0"
+          "SecurityTools": "1.0.0"
         },
         "runtime": {
           "CoronaCenter.Services.dll": {}
@@ -1399,12 +1399,15 @@
           "CoronaCenter.Services.dll": {}
         }
       },
-      "Tools/1.0.0": {
+      "SecurityTools/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.8"
+        },
         "runtime": {
-          "Tools.dll": {}
+          "SecurityTools.dll": {}
         },
         "compile": {
-          "Tools.dll": {}
+          "SecurityTools.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -3820,7 +3823,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Tools/1.0.0": {
+    "SecurityTools/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

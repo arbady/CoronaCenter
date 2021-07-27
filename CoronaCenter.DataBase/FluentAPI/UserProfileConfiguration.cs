@@ -42,6 +42,16 @@ namespace CoronaCenter.Model.FluentAPI
                    //je mets un index et la contrainte d'unicité
                    .HasIndex(c => c.Email)
                    .IsUnique();
+
+            //Relation
+
+            builder.HasOne(u => u.Patient)
+                   .WithOne(p => p.User)
+                   .HasForeignKey<Patient>(p => p.UserId);
+
+            builder.HasOne(u => u.Staff)
+                  .WithOne(s => s.User)
+                  .HasForeignKey<Staff>(s => s.UserId);
         }
     }
 }

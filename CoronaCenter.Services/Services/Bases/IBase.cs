@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace CoronaCenter.Services.Services.Bases
 {
-    public interface IBase<Model, Form> : IService<Model, Form, int>{}
+    public interface IBase<Entity, Model, Form> : IService<Entity, Model, Form, int>{}
 }

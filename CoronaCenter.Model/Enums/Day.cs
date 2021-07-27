@@ -9,7 +9,7 @@ namespace CoronaCenter.Model.Enums
     public enum Day
     {
         Lundi,
-        Merdi,
+        Mardi,
         Mercredi,
         Jeudi,
         Vendredi,

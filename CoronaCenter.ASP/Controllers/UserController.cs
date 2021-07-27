@@ -12,9 +12,9 @@ namespace CoronaCenter.ASP.Controllers
 {
     public class UserController : Controller
     {
-        private readonly IBase<UserModel, UserForm> _service;
+        private readonly IBase<UserProfile, UserModel, UserForm> _service;
 
-        public UserController(IBase<UserModel, UserForm> service)
+        public UserController(IBase<UserProfile, UserModel, UserForm> service)
         {
             _service = service;
         }

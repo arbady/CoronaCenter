@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CoronaCenter.Model.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace CoronaCenter.Model
 {
@@ -13,6 +14,8 @@ namespace CoronaCenter.Model
         [Required]
         [MaxLength(64)]
         public string LastName { get; set; }
+
+        public Role Role { get; set; }
 
         [Required]
         [MaxLength(256)]

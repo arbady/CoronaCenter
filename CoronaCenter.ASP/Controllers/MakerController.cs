@@ -9,9 +9,9 @@ namespace CoronaCenter.ASP.Controllers
 {
     public class MakerController : Controller
     {
-        private readonly IBase<MakerModel, MakerForm> _service;
+        private readonly IBase<Maker, MakerModel, MakerForm> _service;
 
-        public MakerController(IBase<MakerModel, MakerForm> service)
+        public MakerController(IBase<Maker, MakerModel, MakerForm> service)
         {
             _service = service;
         }

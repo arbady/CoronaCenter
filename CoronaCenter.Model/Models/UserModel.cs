@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace CoronaCenter.Model.Models
 {
-    public class UserModel
+    public class UserModel : IDataModel<int>
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public Patient Patient { get; set; }
-        public Staff Staff { get; set; }
+        //public Patient Patient { get; set; }
+        //public Staff Staff { get; set; }
     }
 }
